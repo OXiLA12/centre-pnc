@@ -1,6 +1,6 @@
 {
  "checkedAt": "2026-10-01",
- "summary": "Ajout du moyen-courrier : Transavia recrute à Orly, Luxair a des postes publiés. SWISS Genève reprend en 2027.",
+ "summary": "Ajout de 29 compagnies (Ryanair, Wizz Air, Emerald, Norwegian, flydubai…) et du filtre « Travail en anglais ».",
  "airlines": {
   "aerlingus": {
    "access": "open",
@@ -40,7 +40,8 @@
     "https://www.aerlingus.com/careers/careers-in-the-air/cabin-crew/",
     "https://cabincrew24.com/aer-lingus-cabin-crew-requirements/"
    ],
-   "haul": "mixte"
+   "haul": "mixte",
+   "englishEnv": true
   },
   "aircanada": {
    "access": "permit",
@@ -75,7 +76,8 @@
    "recruitText": "Pas vérifié récemment.",
    "region": "ameriques",
    "sources": [],
-   "haul": "long"
+   "haul": "long",
+   "englishEnv": true
   },
   "aircaraibes": {
    "access": "open",
@@ -192,7 +194,8 @@
    "sources": [
     "https://emplois.ca.indeed.com/q-agent-de-bord,-air-transat-l-montr%C3%A9al,-qc-jobs.html"
    ],
-   "haul": "long"
+   "haul": "long",
+   "englishEnv": true
   },
   "britishairways": {
    "access": "blocked",
@@ -222,7 +225,8 @@
    "recruitText": "Pas de parrainage de visa pour les PNC.",
    "region": "europe",
    "sources": [],
-   "haul": "long"
+   "haul": "long",
+   "englishEnv": true
   },
   "brussels": {
    "access": "open",
@@ -294,7 +298,8 @@
    "sources": [
     "https://jobsatcathaypacific.com/cabincrew/m/overseas-applicants/"
    ],
-   "haul": "long"
+   "haul": "long",
+   "englishEnv": true
   },
   "corsair": {
    "access": "open",
@@ -450,7 +455,8 @@
     "https://aeromorning.com/en/emirates-cabin-crew-hiring-in-france-august-2026-open-days/",
     "https://learnwithkateryna.ae/en/blog/emirates-cabin-crew-salary"
    ],
-   "haul": "long"
+   "haul": "long",
+   "englishEnv": true
   },
   "etihad": {
    "access": "open",
@@ -501,7 +507,8 @@
     "https://careers.etihad.com/teams/cabin-crew",
     "https://cabincrew24.com/etihad-cabin-crew-requirements/"
    ],
-   "haul": "long"
+   "haul": "long",
+   "englishEnv": true
   },
   "frenchbee": {
    "access": "open",
@@ -684,7 +691,8 @@
     "https://careers.qatarairways.com/global/JobDetail/Cabin-Crew-Recruitment-Paris-France-2026/66193",
     "https://thecabincrewforum.com/2026/08/16/new-job-alert-qatar-airways-is-hiring-cabin-crew-across-8-global-cities/"
    ],
-   "haul": "long"
+   "haul": "long",
+   "englishEnv": true
   },
   "riyadhair": {
    "access": "open",
@@ -730,7 +738,8 @@
     "https://www.avianation.com/jobs/cabin-crew-recruitment-event-paris-france-d91aefe6",
     "https://thecabincrewforum.com/2026/07/03/riyadh-air-cabin-crew-recruitment-2026-the-complete-step-by-step-guide/"
    ],
-   "haul": "long"
+   "haul": "long",
+   "englishEnv": true
   },
   "singapore": {
    "access": "hard",
@@ -773,7 +782,8 @@
    "sources": [
     "https://heraviationera.com/recruitment/singapore-airlines-cabin-crew-interviews-september-october-2026-bdf37be6"
    ],
-   "haul": "long"
+   "haul": "long",
+   "englishEnv": true
   },
   "swiss": {
    "access": "open",
@@ -1084,6 +1094,930 @@
    "sources": [
     "https://pnc-coaching.fr/air-corsica-organise-des-selections-pnc/"
    ]
+  },
+  "ryanair": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [],
+   "cca": false,
+   "access": "open",
+   "events": [
+    {
+     "date": "2026-10-09",
+     "city": "Dublin",
+     "kind": "Recruitment day"
+    },
+    {
+     "date": "2026-10-14",
+     "city": "Vienne",
+     "kind": "Recruitment day"
+    },
+    {
+     "date": "2026-11-14",
+     "city": "Dublin",
+     "kind": "Recruitment day"
+    },
+    {
+     "date": "2026-11-22",
+     "city": "Cork",
+     "kind": "Recruitment day"
+    }
+   ],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": true,
+   "other": [
+    "Formation de 6 semaines financée sous conditions d'engagement : remboursement partiel si tu pars tôt, lis le contrat",
+    "Rythme très soutenu",
+    "Bases au Royaume-Uni : visa nécessaire, vise l'Irlande ou l'UE"
+   ],
+   "perks": [
+    "Recrute sans expérience",
+    "CCA inclus",
+    "Tremplin — paie variable"
+   ],
+   "name": "Ryanair",
+   "iata": "FR",
+   "haul": "moyen",
+   "region": "europe",
+   "country": "Irlande (bases dans toute l'Europe)",
+   "base": "Dublin, Cork + bases en Europe (dont Beauvais, Marseille, Bordeaux, Toulouse)",
+   "payMin": 1600,
+   "payMax": 2200,
+   "payNote": "1 600 à 2 200 € par mois selon l'activité : une grosse part vient des heures de vol et des commissions sur les ventes à bord. Le premier contrat passe souvent par l'agence Crewlink ou par Malta Air.",
+   "network": "Toute l'Europe et le Maghreb",
+   "recruit": "open",
+   "recruitText": "Journées de recrutement en continu. 100 postes annoncés à Dublin et des postes à Cork pour l'été 2026.",
+   "fit": "Base à Dublin ou Cork : immersion en anglais garantie et un an d'expérience reconnue par le Golfe. C'est un tremplin, pas une fin.",
+   "careersUrl": "https://careers.ryanair.com/cabin-crew/",
+   "sources": [
+    "https://corporate.ryanair.com/news/ryanair-announces-100-cabin-crew-jobs-in-dublin-for-summer-2026/",
+    "https://www.skysuccess.fr/ryanair-recrutement-pnc/"
+   ]
+  },
+  "wizzair": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [],
+   "cca": false,
+   "access": "open",
+   "events": [
+    {
+     "date": "2026-10-06",
+     "city": "Catane",
+     "kind": "Recruitment day"
+    },
+    {
+     "date": "2026-10-20",
+     "city": "Milan Malpensa",
+     "kind": "Recruitment day"
+    },
+    {
+     "date": "2026-10-23",
+     "city": "Rome Fiumicino",
+     "kind": "Recruitment day"
+    },
+    {
+     "date": "2026-10-28",
+     "city": "Catane",
+     "kind": "Recruitment day"
+    }
+   ],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": true,
+   "other": [
+    "Allonge de 210 cm",
+    "Pas de parrainage de visa : passeport UE indispensable"
+   ],
+   "perks": [
+    "Recrute sans expérience",
+    "Processus rapide (environ 8 jours)",
+    "Tremplin — paie variable"
+   ],
+   "name": "Wizz Air",
+   "iata": "W6",
+   "haul": "moyen",
+   "region": "europe",
+   "country": "Hongrie (bases dans toute l'Europe)",
+   "base": "Budapest + une trentaine de bases (Italie, Pologne, Roumanie…)",
+   "payMin": 1400,
+   "payMax": 2000,
+   "payNote": "Estimation : dépend beaucoup du pays de la base, plus bas en Europe de l'Est.",
+   "network": "Europe, Moyen-Orient",
+   "recruit": "open",
+   "recruitText": "Recrutement en continu dans près de 30 villes. Journées en Italie en octobre.",
+   "fit": "Le plus rapide pour décrocher un premier poste en anglais. Choisis une base où la vie n'est pas trop chère.",
+   "careersUrl": "https://careers.wizzair.com/content/EventsCabinCrew/?locale=en_US",
+   "sources": [
+    "https://careers.wizzair.com/content/EventsCabinCrew/?locale=en_US",
+    "https://heraviationera.com/airlines/wizz-air"
+   ]
+  },
+  "easyjeteurope": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "expMonths": 6,
+   "expRequired": true,
+   "checkedAt": "2026-10-01",
+   "englishEnv": true,
+   "other": [
+    "Entretien en anglais"
+   ],
+   "perks": [
+    "CCA payé par la compagnie",
+    "Contrat local"
+   ],
+   "name": "easyJet Europe",
+   "iata": "EC",
+   "haul": "moyen",
+   "region": "europe",
+   "country": "Autriche (bases dans l'UE)",
+   "base": "Amsterdam, Berlin, Milan Malpensa, Naples…",
+   "payMin": 2000,
+   "payMax": 2600,
+   "payNote": "À Amsterdam, environ 2 000 à 3 000 € par mois d'après les salaires déclarés. Le montant varie selon la base.",
+   "network": "Europe",
+   "englishNote": "C1 conseillé",
+   "recruit": "unknown",
+   "recruitText": "Recrute régulièrement pour ses bases européennes. Surveille le site carrières.",
+   "fit": "Amsterdam ou Berlin : tu travailles en anglais avec un bon salaire pour du moyen-courrier.",
+   "careersUrl": "https://careers.easyjet.com",
+   "sources": [
+    "https://www.glassdoor.com/Salary/easyJet-Cabin-Crew-Amsterdam-Salaries-EJI_IE8754.0,7_KO8,18_IL.19,28_IM1112.htm"
+   ]
+  },
+  "emerald": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": true,
+   "other": [
+    "Droit de travailler en Irlande : OK avec un passeport UE",
+    "Base de Belfast : Royaume-Uni, visa nécessaire"
+   ],
+   "perks": [
+    "CDI",
+    "Formation payée de 4 semaines",
+    "Débutants acceptés"
+   ],
+   "name": "Emerald Airlines (Aer Lingus Regional)",
+   "iata": "EA",
+   "haul": "moyen",
+   "region": "europe",
+   "country": "Irlande",
+   "base": "Dublin",
+   "payMin": 1900,
+   "payMax": 2300,
+   "payNote": "Estimation : salaire fixe + variable, planning régulier, retraite d'entreprise.",
+   "network": "Irlande, Royaume-Uni, Europe (ATR 72)",
+   "recruit": "open",
+   "recruitText": "Recrutement de PNC débutants et expérimentés à Dublin (annonce d'août 2026).",
+   "fit": "Parfait pour atteindre le C1 : tout se passe en anglais à Dublin, et c'est une porte vers Aer Lingus.",
+   "careersUrl": "https://www.emeraldairlines.com",
+   "sources": [
+    "https://www.cabincrewhub.net/2026/08/emerald-airlines-cabin-crew-experienced.html",
+    "https://www.emeraldairlines.com/article/eager-to-start-a-career-in-aviation-aer-lingus-regional-embarks-on-major-recruitment-drive-for-cabin-crew"
+   ]
+  },
+  "norwegian": {
+   "minAge": 20,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": true,
+   "other": [
+    "Savoir nager",
+    "Allonge de 210 cm",
+    "Habiter à moins de 90 min de la base"
+   ],
+   "perks": [
+    "Contrat permanent",
+    "Vie en Espagne"
+   ],
+   "name": "Norwegian",
+   "iata": "DY",
+   "haul": "moyen",
+   "region": "europe",
+   "country": "Norvège (bases en Espagne)",
+   "base": "Barcelone, Palma, Malaga, Alicante",
+   "payMin": 1600,
+   "payMax": 2100,
+   "payNote": "Estimation, contrat espagnol permanent.",
+   "network": "Europe, Scandinavie",
+   "recruit": "open",
+   "recruitText": "Candidatures en continu pour les formations de novembre 2026 à février 2027.",
+   "fit": "Vivre en Espagne en travaillant en anglais.",
+   "careersUrl": "https://careers.norwegian.com/go/Cabin-Crew/777802/",
+   "sources": [
+    "https://careers.norwegian.com/go/Cabin-Crew/777802/"
+   ]
+  },
+  "airbaltic": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": true,
+   "other": [
+    "Passeport UE"
+   ],
+   "perks": [
+    "Formation payée",
+    "Débutants acceptés"
+   ],
+   "name": "airBaltic",
+   "iata": "BT",
+   "haul": "moyen",
+   "region": "europe",
+   "country": "Lettonie",
+   "base": "Riga, Tallinn, Vilnius",
+   "payMin": 1300,
+   "payMax": 1600,
+   "payNote": "Environ 1 700 à 1 800 € brut par mois après la formation (environ 1 050 € pendant). Paie basse, mais la vie coûte moins cher.",
+   "network": "Europe, Moyen-Orient",
+   "recruit": "unknown",
+   "recruitText": "Grande campagne (200 postes) pour l'été 2026. Surveille la prochaine.",
+   "fit": "Environnement 100 % anglais. À prendre seulement comme première expérience.",
+   "careersUrl": "https://careers.airbaltic.com",
+   "sources": [
+    "https://aviationa2z.com/index.php/2026/09/25/airbaltic-cabin-crew-salary-2026/"
+   ]
+  },
+  "kmmalta": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [
+    "Maltais"
+   ],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": true,
+   "other": [
+    "Savoir nager",
+    "Allonge de 207 cm"
+   ],
+   "perks": [
+    "CDI"
+   ],
+   "name": "KM Malta Airlines",
+   "iata": "KM",
+   "haul": "moyen",
+   "region": "europe",
+   "country": "Malte",
+   "base": "Luqa (Malte)",
+   "payMin": 1500,
+   "payMax": 1900,
+   "payNote": "Estimation.",
+   "network": "Europe, Méditerranée",
+   "recruit": "closed",
+   "recruitText": "Campagne close le 12 septembre 2026. Le maltais est exigé.",
+   "fit": "Hors de portée sans maltais.",
+   "careersUrl": "https://kmmaltairlines.com/en/careers/Cabin-Crew",
+   "sources": [
+    "https://ats.indigo.jobs/jobs/cabin-crew-4323"
+   ]
+  },
+  "tuibelgium": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": false,
+   "other": [
+    "Anglais + français ou néerlandais (B2)",
+    "Numéro de sécurité sociale belge"
+   ],
+   "perks": [
+    "Français utile",
+    "Quelques vols long-courriers"
+   ],
+   "name": "TUI fly Belgium",
+   "iata": "TB",
+   "haul": "mixte",
+   "region": "europe",
+   "country": "Belgique",
+   "base": "Bruxelles",
+   "payMin": 1900,
+   "payMax": 2300,
+   "payNote": "Estimation. Payé dès le premier jour de formation ; contrats d'au moins 7 mois, garantis sur 3 ans.",
+   "network": "Méditerranée, Canaries, Caraïbes",
+   "recruit": "unknown",
+   "recruitText": "Les formations pour l'été ont lieu de novembre à janvier. Surveille les annonces de l'automne.",
+   "fit": "Autre option francophone à Bruxelles, en plus de Brussels Airlines.",
+   "careersUrl": "https://careers.tuigroup.com/en/bene-early-careers",
+   "sources": [
+    "https://careers.tuigroup.com/en/bene-early-careers"
+   ]
+  },
+  "flydubai": {
+   "minAge": 21,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "expMonths": 12,
+   "expRequired": true,
+   "checkedAt": "2026-10-01",
+   "englishEnv": true,
+   "other": [
+    "Taille minimale de 158 cm",
+    "Déménager à Dubaï"
+   ],
+   "perks": [
+    "Non imposé",
+    "Salaire du Golfe"
+   ],
+   "name": "flydubai",
+   "iata": "FZ",
+   "haul": "moyen",
+   "region": "golfe",
+   "country": "Émirats arabes unis",
+   "base": "Dubaï",
+   "payMin": 2600,
+   "payMax": 2900,
+   "payNote": "Environ 12 800 AED par mois (8 275 de base, logement et transport inclus, + environ 4 500 d'heures de vol), non imposé. Engagement de formation de 2 650 $ la première année.",
+   "network": "Moyen-Orient, Europe de l'Est, Asie, Afrique",
+   "recruit": "unknown",
+   "recruitText": "Recrute régulièrement ; les open days en Europe sont rares. Candidature via le site carrières.",
+   "fit": "Salaire du Golfe en moyen-courrier : 21 ans + 1 an d'expérience, donc fin 2027.",
+   "careersUrl": "https://careers.flydubai.com/cabin-crew",
+   "sources": [
+    "https://gulfnews.com/business/aviation/flydubai-opens-hiring-salary-perks-and-travel-benefits-for-cabin-crew-revealed-1.500510916"
+   ]
+  },
+  "airarabia": {
+   "minAge": 20,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [],
+   "cca": false,
+   "access": "hard",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": true,
+   "other": [
+    "20 à 29 ans sans expérience"
+   ],
+   "perks": [
+    "Non imposé",
+    "Accessible dès 20 ans"
+   ],
+   "name": "Air Arabia",
+   "iata": "G9",
+   "haul": "moyen",
+   "region": "golfe",
+   "country": "Émirats arabes unis",
+   "base": "Sharjah",
+   "payMin": 1600,
+   "payMax": 2000,
+   "payNote": "Estimation, non imposé.",
+   "network": "Moyen-Orient, Asie, Afrique, Europe de l'Est",
+   "accessNote": "Recrute surtout au Moyen-Orient et en Asie",
+   "recruit": "open",
+   "recruitText": "Grande campagne 2026, mais au Moyen-Orient et en Asie. Candidature en ligne possible.",
+   "fit": "Une des rares compagnies du Golfe accessibles à 20 ans.",
+   "careersUrl": "https://www.airarabia.com",
+   "sources": [
+    "https://gulfnews.com/business/aviation/air-arabia-hiring-pilots-and-cabin-crew-salary-perks-and-how-to-apply-1.500342578"
+   ]
+  },
+  "gulfair": {
+   "minAge": null,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": true,
+   "other": [
+    "Âge minimum à vérifier (souvent 21 ans dans le Golfe)"
+   ],
+   "perks": [
+    "Non imposé"
+   ],
+   "name": "Gulf Air",
+   "iata": "GF",
+   "haul": "mixte",
+   "region": "golfe",
+   "country": "Bahreïn",
+   "base": "Manama",
+   "payMin": 2000,
+   "payMax": 2400,
+   "payNote": "Environ 2 380 $ brut par mois en moyenne, plus des primes. Non imposé.",
+   "network": "Moyen-Orient, Europe, Asie",
+   "recruit": "unknown",
+   "recruitText": "Pas de campagne européenne repérée.",
+   "fit": "Option Golfe secondaire.",
+   "careersUrl": "https://www.gulfair.com",
+   "sources": [
+    "https://aviationa2z.com/index.php/2026/09/17/gulf-air-cabin-crew-salary-2026/"
+   ]
+  },
+  "hainan": {
+   "minAge": 21,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [
+    "Mandarin"
+   ],
+   "cca": false,
+   "access": "hard",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": true,
+   "other": [
+    "Allonge de 212 cm",
+    "Candidature par email (CV en PDF)"
+   ],
+   "perks": [
+    "Pas de frais de formation"
+   ],
+   "name": "Hainan Airlines",
+   "iata": "HU",
+   "haul": "long",
+   "region": "asie",
+   "country": "Chine",
+   "base": "Chine (Haikou, Pékin…)",
+   "payMin": 2200,
+   "payMax": 2500,
+   "payNote": "Environ 18 500 CNY par mois, primes comprises.",
+   "network": "Chine, Europe, Amérique du Nord",
+   "accessNote": "Diplôme d'études supérieures et chinois de base exigés",
+   "recruit": "open",
+   "recruitText": "Recrutement international de PNC depuis juillet 2026.",
+   "fit": "Aventure en Asie, mais il faut des bases de chinois.",
+   "careersUrl": "https://betteraviationjobs.com/job/hainan-airlines-international-cabin-crew-recruitment-july-2026/",
+   "sources": [
+    "https://betteraviationjobs.com/job/hainan-airlines-international-cabin-crew-recruitment-july-2026/"
+   ]
+  },
+  "chinaeastern": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [
+    "Espagnol"
+   ],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": true,
+   "other": [
+    "Espagnol ou italien exigé pour les Européens"
+   ],
+   "perks": [],
+   "name": "China Eastern",
+   "iata": "MU",
+   "haul": "long",
+   "region": "asie",
+   "country": "Chine",
+   "base": "Shanghai",
+   "payMin": 2000,
+   "payMax": 2500,
+   "payNote": "Estimation.",
+   "network": "Chine, Europe",
+   "recruit": "unknown",
+   "recruitText": "Recrutement de ressortissants européens publié en juillet 2026, pour hispanophones ou italophones.",
+   "fit": "Possible si tu parles espagnol ou italien.",
+   "careersUrl": "https://www.cabincrewhub.net/2026/07/china-eastern-airlines-cabin-crew.html",
+   "sources": [
+    "https://www.cabincrewhub.net/2026/07/china-eastern-airlines-cabin-crew.html"
+   ]
+  },
+  "vueling": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [
+    "Espagnol"
+   ],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": false,
+   "other": [],
+   "perks": [],
+   "name": "Vueling",
+   "iata": "VY",
+   "haul": "moyen",
+   "region": "europe",
+   "country": "Espagne",
+   "base": "Barcelone",
+   "payMin": 1500,
+   "payMax": 2000,
+   "payNote": "Estimation.",
+   "network": "Europe",
+   "recruit": "unknown",
+   "recruitText": "Espagnol courant exigé. Pas vérifié en détail.",
+   "fit": "Accessible si tu apprends : espagnol.",
+   "careersUrl": "https://careers.vueling.com",
+   "sources": []
+  },
+  "iberia": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [
+    "Espagnol"
+   ],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": false,
+   "other": [],
+   "perks": [],
+   "name": "Iberia",
+   "iata": "IB",
+   "haul": "mixte",
+   "region": "europe",
+   "country": "Espagne",
+   "base": "Madrid",
+   "payMin": 1800,
+   "payMax": 2400,
+   "payNote": "Estimation.",
+   "network": "Europe et long-courrier",
+   "recruit": "unknown",
+   "recruitText": "Espagnol courant exigé. Pas vérifié en détail.",
+   "fit": "Accessible si tu apprends : espagnol.",
+   "careersUrl": "https://grupo.iberia.com",
+   "sources": []
+  },
+  "tap": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [
+    "Portugais"
+   ],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": false,
+   "other": [],
+   "perks": [],
+   "name": "TAP Air Portugal",
+   "iata": "TP",
+   "haul": "mixte",
+   "region": "europe",
+   "country": "Portugal",
+   "base": "Lisbonne",
+   "payMin": 1500,
+   "payMax": 2000,
+   "payNote": "Estimation.",
+   "network": "Europe et long-courrier",
+   "recruit": "unknown",
+   "recruitText": "Portugais courant exigé. Pas vérifié en détail.",
+   "fit": "Accessible si tu apprends : portugais.",
+   "careersUrl": "https://www.flytap.com",
+   "sources": []
+  },
+  "ita": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [
+    "Italien"
+   ],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": false,
+   "other": [],
+   "perks": [],
+   "name": "ITA Airways",
+   "iata": "AZ",
+   "haul": "mixte",
+   "region": "europe",
+   "country": "Italie",
+   "base": "Rome",
+   "payMin": 1800,
+   "payMax": 2400,
+   "payNote": "Estimation.",
+   "network": "Europe et long-courrier",
+   "recruit": "unknown",
+   "recruitText": "Italien courant exigé. Pas vérifié en détail.",
+   "fit": "Accessible si tu apprends : italien.",
+   "careersUrl": "https://www.ita-airways.com",
+   "sources": []
+  },
+  "condor": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [
+    "Allemand"
+   ],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": false,
+   "other": [],
+   "perks": [],
+   "name": "Condor",
+   "iata": "DE",
+   "haul": "mixte",
+   "region": "europe",
+   "country": "Allemagne",
+   "base": "Francfort",
+   "payMin": 2000,
+   "payMax": 2500,
+   "payNote": "Estimation.",
+   "network": "Europe et long-courrier",
+   "recruit": "unknown",
+   "recruitText": "Allemand courant exigé. Pas vérifié en détail.",
+   "fit": "Accessible si tu apprends : allemand.",
+   "careersUrl": "https://www.condor.com",
+   "sources": []
+  },
+  "eurowings": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [
+    "Allemand"
+   ],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": false,
+   "other": [],
+   "perks": [],
+   "name": "Eurowings",
+   "iata": "EW",
+   "haul": "moyen",
+   "region": "europe",
+   "country": "Allemagne",
+   "base": "Düsseldorf, Cologne…",
+   "payMin": 1800,
+   "payMax": 2300,
+   "payNote": "Estimation.",
+   "network": "Europe",
+   "recruit": "unknown",
+   "recruitText": "Allemand courant exigé. Pas vérifié en détail.",
+   "fit": "Accessible si tu apprends : allemand.",
+   "careersUrl": "https://www.eurowings.com",
+   "sources": []
+  },
+  "discover": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [
+    "Allemand"
+   ],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": false,
+   "other": [],
+   "perks": [],
+   "name": "Discover Airlines",
+   "iata": "4Y",
+   "haul": "mixte",
+   "region": "europe",
+   "country": "Allemagne",
+   "base": "Francfort, Munich",
+   "payMin": 2000,
+   "payMax": 2500,
+   "payNote": "Estimation.",
+   "network": "Europe et long-courrier",
+   "recruit": "unknown",
+   "recruitText": "Allemand courant exigé. Pas vérifié en détail.",
+   "fit": "Accessible si tu apprends : allemand.",
+   "careersUrl": "https://www.discover-airlines.com",
+   "sources": []
+  },
+  "aegean": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [
+    "Grec"
+   ],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": false,
+   "other": [],
+   "perks": [],
+   "name": "Aegean Airlines",
+   "iata": "A3",
+   "haul": "moyen",
+   "region": "europe",
+   "country": "Grèce",
+   "base": "Athènes",
+   "payMin": 1400,
+   "payMax": 1900,
+   "payNote": "Estimation.",
+   "network": "Europe",
+   "recruit": "unknown",
+   "recruitText": "Grec courant exigé. Pas vérifié en détail.",
+   "fit": "Accessible si tu apprends : grec.",
+   "careersUrl": "https://en.aegeanair.com",
+   "sources": []
+  },
+  "finnair": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [
+    "Finnois"
+   ],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": false,
+   "other": [],
+   "perks": [],
+   "name": "Finnair",
+   "iata": "AY",
+   "haul": "mixte",
+   "region": "europe",
+   "country": "Finlande",
+   "base": "Helsinki",
+   "payMin": 2000,
+   "payMax": 2500,
+   "payNote": "Estimation.",
+   "network": "Europe et long-courrier",
+   "recruit": "unknown",
+   "recruitText": "Finnois courant exigé. Pas vérifié en détail.",
+   "fit": "Accessible si tu apprends : finnois.",
+   "careersUrl": "https://www.finnair.com",
+   "sources": []
+  },
+  "sas": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [
+    "Langue scandinave"
+   ],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": false,
+   "other": [],
+   "perks": [],
+   "name": "SAS",
+   "iata": "SK",
+   "haul": "mixte",
+   "region": "europe",
+   "country": "Scandinavie",
+   "base": "Copenhague, Stockholm, Oslo",
+   "payMin": 2200,
+   "payMax": 2800,
+   "payNote": "Estimation.",
+   "network": "Europe et long-courrier",
+   "recruit": "unknown",
+   "recruitText": "Langue scandinave courant exigé. Pas vérifié en détail.",
+   "fit": "Accessible si tu apprends : langue scandinave.",
+   "careersUrl": "https://www.flysas.com",
+   "sources": []
+  },
+  "virginatlantic": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [],
+   "cca": false,
+   "access": "blocked",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": true,
+   "other": [],
+   "perks": [],
+   "name": "Virgin Atlantic",
+   "iata": "VS",
+   "haul": "long",
+   "region": "europe",
+   "country": "Royaume-Uni",
+   "base": "Londres Heathrow, Manchester",
+   "payMin": 2000,
+   "payMax": 2600,
+   "payNote": "Estimation en livres sterling.",
+   "network": "Amériques, Caraïbes, Afrique, Asie",
+   "accessNote": "Visa de travail britannique requis depuis le Brexit",
+   "recruit": "unknown",
+   "recruitText": "Pas de parrainage de visa pour les PNC.",
+   "fit": "Hors de portée avec un passeport français seul.",
+   "careersUrl": "https://careersuk.virgin-atlantic.com",
+   "sources": []
+  },
+  "jet2": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [],
+   "cca": false,
+   "access": "blocked",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "checkedAt": "2026-10-01",
+   "englishEnv": true,
+   "other": [],
+   "perks": [],
+   "name": "Jet2",
+   "iata": "LS",
+   "haul": "moyen",
+   "region": "europe",
+   "country": "Royaume-Uni",
+   "base": "Manchester, Leeds, Birmingham…",
+   "payMin": 1700,
+   "payMax": 2200,
+   "payNote": "Estimation, contrats saisonniers.",
+   "network": "Europe du Sud, Canaries",
+   "accessNote": "Visa de travail britannique requis depuis le Brexit",
+   "recruit": "unknown",
+   "recruitText": "Pas de parrainage de visa.",
+   "fit": "Hors de portée avec un passeport français seul.",
+   "careersUrl": "https://www.jet2careers.com",
+   "sources": []
   }
  }
 }

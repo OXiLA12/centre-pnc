@@ -113,6 +113,8 @@ textarea{width:100%;min-height:76px;resize:vertical}
 .who .sub{font-size:.84rem;color:var(--muted)}
 .haul{display:inline-block;margin-top:3px;font-family:var(--f-display);font-weight:600;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:0 6px;border-radius:3px;border:1px solid var(--line);color:var(--muted)}
 .haul.moyen,.haul.mixte{color:var(--info);border-color:var(--info)}
+.haul.eng{color:var(--ok);border-color:var(--ok)}
+.tags{display:flex;flex-wrap:wrap;gap:4px}
 .pay{display:grid;gap:5px;min-width:0}
 .pay .amt{font-family:var(--f-data);font-size:.9rem;font-variant-numeric:tabular-nums}
 .pay .amt small{font-family:var(--f-body);color:var(--muted);font-size:.78rem}
@@ -177,7 +179,7 @@ details.more[open] summary::after{content:"Fermer ▴"}
 <div class="wrap">
   <header class="top">
     <div>
-      <div class="eyebrow">Steward · Moyen-courrier pour débuter · Long-courrier pour viser · Bonne paye</div>
+      <div class="eyebrow">Steward · Moyen-courrier pour débuter · Long-courrier pour viser · France et étranger</div>
       <h1><span class="tag">PNC</span>Centre de contrôle</h1>
     </div>
     <div class="sync">
@@ -236,6 +238,7 @@ details.more[open] summary::after{content:"Fermer ▴"}
           <option value="name">Nom</option>
         </select>
       </label>
+      <label class="ctl" for="fEng"><input type="checkbox" id="fEng"> Seulement en anglais (pour viser le C1)</label>
       <label class="ctl" for="fReach"><input type="checkbox" id="fReach"> Masquer ce qui est hors de portée</label>
     </div>
     <div class="list" id="list">
@@ -301,7 +304,7 @@ details.more[open] summary::after{content:"Fermer ▴"}
 
   let diag="";
   let db=null, uid="local", airlines=[], meta=null, mine={}, profile=null, userLoaded=false, airlinesLoaded=false, dbDown=false;
-  const ui = {haul:"all",region:"all",status:"all",sort:"next",reach:false,open:[]};
+  const ui = {eng:false,haul:"all",region:"all",status:"all",sort:"next",reach:false,open:[]};
   try{ Object.assign(ui, JSON.parse(localStorage.getItem("pnc-ui")||"{}")); }catch(e){}
   const saveUi=()=>{ try{ localStorage.setItem("pnc-ui", JSON.stringify(ui)); }catch(e){} };
 
@@ -421,7 +424,7 @@ details.more[open] summary::after{content:"Fermer ▴"}
   function renderChips(){
     $("haulChips").innerHTML = HAULS.map(([k,l])=>`<button type="button" class="chip" data-h="${k}" aria-pressed="${ui.haul===k}">${l}</button>`).join("");
     $("regionChips").innerHTML = REGIONS.map(([k,l])=>`<button type="button" class="chip" data-r="${k}" aria-pressed="${ui.region===k}">${l}</button>`).join("");
-    $("fStatus").value=ui.status; $("fSort").value=ui.sort; $("fReach").checked=!!ui.reach;
+    $("fStatus").value=ui.status; $("fSort").value=ui.sort; $("fReach").checked=!!ui.reach; $("fEng").checked=!!ui.eng;
   }
 
   function cardHtml(a){
@@ -441,7 +444,7 @@ details.more[open] summary::after{content:"Fermer ▴"}
     return `<article class="card${tracked?" mine-active":""}" id="c-${esc(a.id)}">
       <div class="row">
         <div class="who"><div class="iata" aria-hidden="true">${esc(a.iata||"")}</div>
-          <div style="min-width:0"><h3>${esc(a.name)}</h3><div class="sub">${esc(a.base||"")} · ${esc(a.country||"")}</div><div class="haul ${esc(a.haul||"long")}">${esc(HAUL_L[a.haul||"long"])}</div></div></div>
+          <div style="min-width:0"><h3>${esc(a.name)}</h3><div class="sub">${esc(a.base||"")} · ${esc(a.country||"")}</div><div class="tags"><span class="haul ${esc(a.haul||"long")}">${esc(HAUL_L[a.haul||"long"])}</span>${a.englishEnv?`<span class="haul eng">Travail en anglais</span>`:""}</div></div></div>
         <div class="pay"><span class="amt">${min.toLocaleString("fr-FR")}–${max.toLocaleString("fr-FR")} € <small>net/mois</small></span>
           <div class="track" aria-hidden="true"><i style="left:${left}%;width:${w}%"></i></div>
           <div class="perks">${(a.perks||[]).map(p=>`<span>${esc(p)}</span>`).join("")}</div></div>
@@ -481,6 +484,7 @@ details.more[open] summary::after{content:"Fermer ▴"}
     if(ui.haul!=="all") rows=rows.filter(r=>(r.a.haul||"long")===ui.haul || r.a.haul==="mixte");
     if(ui.region!=="all") rows=rows.filter(r=>r.a.region===ui.region);
     if(ui.status!=="all") rows=rows.filter(r=>(r.a.recruit||"unknown")===ui.status);
+    if(ui.eng) rows=rows.filter(r=>r.a.englishEnv);
     if(ui.reach) rows=rows.filter(r=>!["blocked","no"].includes(r.e.level));
     const recOrder={open:0,soon:1,unknown:2,closed:3};
     rows.sort((x,y)=>{
@@ -551,6 +555,7 @@ details.more[open] summary::after{content:"Fermer ▴"}
   $("fStatus").addEventListener("change",e=>{ ui.status=e.target.value; saveUi(); renderList(); });
   $("fSort").addEventListener("change",e=>{ ui.sort=e.target.value; saveUi(); renderList(); });
   $("fReach").addEventListener("change",e=>{ ui.reach=e.target.checked; saveUi(); renderList(); });
+  $("fEng").addEventListener("change",e=>{ ui.eng=e.target.checked; saveUi(); renderList(); });
   $("list").addEventListener("change",e=>{
     const t=e.target;
     if(t.dataset.track) saveTrack(t.dataset.track,{status:t.value, ...(t.value==="postule" && !(mine[t.dataset.track]||{}).appliedAt ? {appliedAt:new Date().toISOString().slice(0,10)} : {})});
