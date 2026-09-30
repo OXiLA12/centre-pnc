@@ -1,0 +1,1089 @@
+{
+ "checkedAt": "2026-10-01",
+ "summary": "Ajout du moyen-courrier : Transavia recrute à Orly, Luxair a des postes publiés. SWISS Genève reprend en 2027.",
+ "airlines": {
+  "aerlingus": {
+   "access": "open",
+   "ageRule": "application",
+   "base": "Dublin",
+   "careersUrl": "https://www.aerlingus.com/careers/careers-in-the-air/cabin-crew/",
+   "cca": false,
+   "checkedAt": "2026-09-30",
+   "country": "Irlande",
+   "english": "C1",
+   "englishNote": "conseillé : entretiens avec des natifs",
+   "events": [],
+   "expMonths": 12,
+   "expRequired": true,
+   "fit": "Ton option anglophone en Europe ; vise le C1 d'ici là.",
+   "iata": "EI",
+   "langs": [],
+   "minAge": 18,
+   "name": "Aer Lingus",
+   "network": "Transatlantique (États-Unis, Canada) + Europe",
+   "other": [
+    "Droit de travailler en Irlande (OK avec un passeport UE)",
+    "Visa US obtenable",
+    "Formation payée de 6 semaines"
+   ],
+   "payMax": 2500,
+   "payMin": 2100,
+   "payNote": "Environ 27 à 30 k€ brut par an, plus les primes de vol. Coût du logement élevé à Dublin.",
+   "perks": [
+    "Formation payée",
+    "Contrat saisonnier"
+   ],
+   "recruit": "closed",
+   "recruitText": "Campagne saisonnière 2026 close (plus de 5 000 candidatures). La suivante ouvre en général en fin d'année ou en début d'année.",
+   "region": "europe",
+   "sources": [
+    "https://www.aerlingus.com/careers/careers-in-the-air/cabin-crew/",
+    "https://cabincrew24.com/aer-lingus-cabin-crew-requirements/"
+   ],
+   "haul": "mixte"
+  },
+  "aircanada": {
+   "access": "permit",
+   "accessNote": "Permis de travail canadien requis : le PVT (18–35 ans) convient",
+   "ageRule": "application",
+   "base": "Montréal / Toronto / Vancouver",
+   "careersUrl": "https://careers.aircanada.com",
+   "cca": false,
+   "checkedAt": "2026-09-30",
+   "country": "Canada",
+   "english": "B2",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "fit": "Comme Air Transat : il faut d'abord un PVT.",
+   "iata": "AC",
+   "langs": [],
+   "minAge": 18,
+   "name": "Air Canada",
+   "network": "Monde entier",
+   "other": [
+    "Bilingue français-anglais apprécié"
+   ],
+   "payMax": 2500,
+   "payMin": 1800,
+   "payNote": "Estimation : débutant plutôt bas, progression avec l'ancienneté.",
+   "perks": [
+    "Grand réseau",
+    "Bilingue valorisé"
+   ],
+   "recruit": "unknown",
+   "recruitText": "Pas vérifié récemment.",
+   "region": "ameriques",
+   "sources": [],
+   "haul": "long"
+  },
+  "aircaraibes": {
+   "access": "open",
+   "ageRule": "application",
+   "base": "Paris Orly",
+   "careersUrl": "https://www.aircaraibes.com",
+   "cca": true,
+   "checkedAt": "2026-09-30",
+   "country": "France",
+   "english": "B2",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "fit": "Bonne porte d'entrée long-courrier en France.",
+   "iata": "TX",
+   "langs": [],
+   "minAge": 18,
+   "name": "Air Caraïbes",
+   "network": "Antilles, Guyane, Cuba, Haïti",
+   "other": [
+    "Recrutement en français",
+    "Formation interne d'environ 2 semaines"
+   ],
+   "payMax": 2400,
+   "payMin": 1900,
+   "payNote": "Estimation : 1 900 à 2 400 € net.",
+   "perks": [
+    "100 % long-courrier",
+    "Contrat français"
+   ],
+   "recruit": "unknown",
+   "recruitText": "Pas de campagne repérée fin septembre 2026. Recrute en général par vagues avant la haute saison.",
+   "region": "france",
+   "sources": [
+    "https://www.skysuccess.fr/quelles-compagnies-recrutent-des-pnc-en-francais-en-2026/"
+   ],
+   "haul": "long"
+  },
+  "airfrance": {
+   "access": "open",
+   "ageRule": "application",
+   "base": "Paris CDG / Orly",
+   "careersUrl": "https://recrutement.airfrance.com",
+   "cca": true,
+   "checkedAt": "2026-09-30",
+   "country": "France",
+   "english": "B2",
+   "englishNote": "certifié",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "fit": "La meilleure carrière si un jour tu veux revenir vivre en France.",
+   "iata": "AF",
+   "langs": [],
+   "minAge": 18,
+   "name": "Air France",
+   "network": "Monde entier ; les nouveaux PNC font aussi du moyen-courrier au début",
+   "other": [
+    "Passeport européen",
+    "Bac",
+    "Visite médicale valide"
+   ],
+   "payMax": 2500,
+   "payMin": 2000,
+   "payNote": "2 000 à 2 500 € net en début de carrière, plus les frais d'escale. Avec l'ancienneté, on peut atteindre 3 500 à 4 500 € : c'est la meilleure progression en France.",
+   "perks": [
+    "13e mois",
+    "CDI",
+    "Billets GP",
+    "Frais d'escale"
+   ],
+   "recruit": "closed",
+   "recruitText": "La campagne 2026 (210 PNC en alternance, ouverte le 13 janvier) est terminée. La prochaine est attendue début 2027 : surveille dès décembre.",
+   "region": "france",
+   "sources": [
+    "https://www.airtraining-academy.com/alternance-pnc-air-france-2026-cca-obligatoire/",
+    "https://www.pnc-contact.com/2026/01/08/air-france-recrute-des-pnc-2"
+   ],
+   "haul": "mixte"
+  },
+  "airtransat": {
+   "access": "permit",
+   "accessNote": "Permis de travail canadien requis : le PVT (18–35 ans) convient",
+   "ageRule": "application",
+   "base": "Montréal",
+   "careersUrl": "https://emplois.ca.indeed.com/cmp/Air-Transat",
+   "cca": false,
+   "checkedAt": "2026-09-30",
+   "country": "Canada",
+   "english": "B2",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "fit": "Option aventure en français, à condition d'obtenir un PVT.",
+   "iata": "TS",
+   "langs": [],
+   "minAge": 18,
+   "name": "Air Transat",
+   "network": "Europe, Caraïbes, Amérique latine",
+   "other": [
+    "Bilingue français-anglais exigé",
+    "Casier judiciaire vierge"
+   ],
+   "payMax": 2600,
+   "payMin": 1900,
+   "payNote": "Environ 31 à 54 k CAD brut par an selon l'ancienneté. Paie correcte mais pas exceptionnelle.",
+   "perks": [
+    "Bilingue valorisé",
+    "Vie à Montréal"
+   ],
+   "recruit": "open",
+   "recruitText": "Postes d'agent de bord publiés à Montréal en septembre 2026.",
+   "region": "ameriques",
+   "sources": [
+    "https://emplois.ca.indeed.com/q-agent-de-bord,-air-transat-l-montr%C3%A9al,-qc-jobs.html"
+   ],
+   "haul": "long"
+  },
+  "britishairways": {
+   "access": "blocked",
+   "accessNote": "Visa de travail britannique requis depuis le Brexit",
+   "ageRule": "application",
+   "base": "Londres Heathrow",
+   "careersUrl": "https://careers.ba.com",
+   "cca": false,
+   "checkedAt": "2026-09-30",
+   "country": "Royaume-Uni",
+   "english": "C1",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "fit": "Hors de portée avec un passeport français seul.",
+   "iata": "BA",
+   "langs": [],
+   "minAge": 18,
+   "name": "British Airways",
+   "network": "Monde entier",
+   "other": [],
+   "payMax": 2700,
+   "payMin": 2200,
+   "payNote": "Estimation en livres sterling.",
+   "perks": [],
+   "recruit": "unknown",
+   "recruitText": "Pas de parrainage de visa pour les PNC.",
+   "region": "europe",
+   "sources": [],
+   "haul": "long"
+  },
+  "brussels": {
+   "access": "open",
+   "ageRule": "application",
+   "base": "Bruxelles",
+   "careersUrl": "https://www.brusselsairlines.com/jobs",
+   "cca": false,
+   "checkedAt": "2026-09-30",
+   "country": "Belgique",
+   "english": "B2",
+   "events": [],
+   "expMonths": 6,
+   "expRequired": false,
+   "fit": "Long-courrier en Europe en parlant français, à 1 h 20 de Paris en train.",
+   "iata": "SN",
+   "langs": [],
+   "minAge": 18,
+   "name": "Brussels Airlines",
+   "network": "Afrique (gros réseau francophone), États-Unis, Europe",
+   "other": [
+    "Anglais + français ou néerlandais",
+    "Nager 25 m",
+    "Formation de 8 à 9 semaines pour les débutants"
+   ],
+   "payMax": 2400,
+   "payMin": 2000,
+   "payNote": "Estimation : 2 000 à 2 400 € net, avec contrat belge (groupe Lufthansa).",
+   "perks": [
+    "Groupe Lufthansa",
+    "Français utile"
+   ],
+   "recruit": "open",
+   "recruitText": "Liste de réserve ouverte en continu, avec ou sans expérience. Ton français est un vrai atout.",
+   "region": "europe",
+   "sources": [
+    "https://www.aviation24.be/airlines/lufthansa-group/brussels-airlines/hiring-cabin-crew-members-with-without-experience/"
+   ],
+   "haul": "mixte"
+  },
+  "cathay": {
+   "access": "blocked",
+   "accessNote": "Base de Londres : droit de travail au Royaume-Uni et une langue asiatique exigés",
+   "ageRule": "application",
+   "base": "Hong Kong / Londres",
+   "careersUrl": "https://jobsatcathaypacific.com/cabincrew/m/requirements/",
+   "cca": false,
+   "checkedAt": "2026-09-30",
+   "country": "Hong Kong",
+   "english": "B2",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "fit": "Hors de portée pour l'instant.",
+   "iata": "CX",
+   "langs": [],
+   "minAge": 18,
+   "name": "Cathay Pacific",
+   "network": "Asie, Europe, Amériques",
+   "other": [
+    "Langues exigées : cantonais, mandarin, japonais, coréen ou tagalog"
+   ],
+   "payMax": 3000,
+   "payMin": 2400,
+   "payNote": "Estimation.",
+   "perks": [],
+   "recruit": "unknown",
+   "recruitText": "Pas de recrutement accessible à un francophone sans langue asiatique.",
+   "region": "asie",
+   "sources": [
+    "https://jobsatcathaypacific.com/cabincrew/m/overseas-applicants/"
+   ],
+   "haul": "long"
+  },
+  "corsair": {
+   "access": "open",
+   "ageRule": "application",
+   "base": "Paris Orly + outre-mer",
+   "careersUrl": "https://www.flycorsair.com",
+   "cca": true,
+   "checkedAt": "2026-09-30",
+   "country": "France",
+   "english": "B2",
+   "englishNote": "certificat Linguaskill ou LILATE",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "fit": "100 % long-courrier depuis la France, sans expatriation.",
+   "iata": "SS",
+   "langs": [],
+   "minAge": 18,
+   "name": "Corsair",
+   "network": "Antilles, Réunion, Afrique, Canada",
+   "other": [
+    "Entretiens en français"
+   ],
+   "payMax": 2600,
+   "payMin": 2000,
+   "payNote": "Estimation : 2 000 à 2 600 € net selon les vols et les primes.",
+   "perks": [
+    "100 % long-courrier",
+    "Contrat français"
+   ],
+   "recruit": "unknown",
+   "recruitText": "Recrutements ponctuels en 2026, surtout pour les bases de La Réunion, de la Martinique et de la Guadeloupe. Pas de campagne à Paris repérée fin septembre.",
+   "region": "france",
+   "sources": [
+    "https://www.skysuccess.fr/quelles-compagnies-recrutent-des-pnc-en-francais-en-2026/"
+   ],
+   "haul": "long"
+  },
+  "edelweiss": {
+   "access": "open",
+   "ageRule": "application",
+   "base": "Zurich",
+   "careersUrl": "https://www.flyedelweiss.com",
+   "cca": false,
+   "checkedAt": "2026-09-30",
+   "country": "Suisse",
+   "english": "B2",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "fit": "Même logique que SWISS : l'allemand est indispensable.",
+   "iata": "WK",
+   "langs": [
+    "Allemand"
+   ],
+   "minAge": 18,
+   "name": "Edelweiss",
+   "network": "Vols vacances long-courrier : Caraïbes, Afrique, Asie, Amériques",
+   "other": [
+    "Citoyen suisse ou UE"
+   ],
+   "payMax": 3300,
+   "payMin": 2800,
+   "payNote": "Estimation en CHF, élevée en euros mais pour un coût de la vie suisse.",
+   "perks": [
+    "Loisirs long-courrier"
+   ],
+   "recruit": "unknown",
+   "recruitText": "Pas d'information récente sur les recrutements.",
+   "region": "europe",
+   "sources": [],
+   "haul": "long"
+  },
+  "emirates": {
+   "access": "open",
+   "ageRule": "joining",
+   "base": "Dubaï",
+   "careersUrl": "https://www.emiratesgroupcareers.com/cabin-crew/",
+   "cca": false,
+   "checkedAt": "2026-09-30",
+   "country": "Émirats arabes unis",
+   "english": "B2",
+   "englishNote": "anglais courant",
+   "events": [
+    {
+     "city": "Marseille",
+     "date": "2026-10-06",
+     "kind": "Open day"
+    },
+    {
+     "city": "Nice",
+     "date": "2026-10-08",
+     "kind": "Open day"
+    },
+    {
+     "city": "Bruxelles",
+     "date": "2026-10-13",
+     "kind": "Open day"
+    },
+    {
+     "city": "Paris",
+     "date": "2026-10-16",
+     "kind": "Open day"
+    },
+    {
+     "city": "Bordeaux",
+     "date": "2026-10-18",
+     "kind": "Open day"
+    },
+    {
+     "city": "Lyon",
+     "date": "2026-10-20",
+     "kind": "Open day"
+    },
+    {
+     "city": "Strasbourg",
+     "date": "2026-10-22",
+     "kind": "Open day"
+    },
+    {
+     "city": "Zurich",
+     "date": "2026-10-24",
+     "kind": "Open day"
+    }
+   ],
+   "expMonths": 0,
+   "expRequired": false,
+   "fit": "Ton choix n°1 : le plus grand réseau pour voyager partout, et Dubaï est la base la plus vivable du Golfe.",
+   "iata": "EK",
+   "langs": [],
+   "minAge": 21,
+   "name": "Emirates",
+   "network": "Plus de 140 destinations sur 6 continents, en A380 et 777",
+   "other": [
+    "Allonge de 212 cm sur la pointe des pieds",
+    "Pas de tatouage visible en uniforme",
+    "CV en anglais + photo récente"
+   ],
+   "payMax": 2900,
+   "payMin": 2500,
+   "payNote": "Environ 11 200 AED/mois en moyenne pour un débutant (base 4 980 AED + environ 70 AED par heure de vol, 80 à 100 h/mois), sans impôt. Logement et transport payés : tu peux épargner une grosse partie.",
+   "perks": [
+    "Non imposé",
+    "Logement fourni",
+    "Transport fourni",
+    "Billets réduits"
+   ],
+   "recruit": "open",
+   "recruitText": "Open days en France en octobre 2026. Tu peux venir à 20 ans si tu as 21 ans à l'entrée en formation. Inscription en ligne conseillée ; journée entière, présence physique uniquement. Dates relevées sur un agrégateur : confirme sur le site Emirates avant de te déplacer.",
+   "region": "golfe",
+   "sources": [
+    "https://flightattendantcentral.com/pages/emirates",
+    "https://aeromorning.com/en/emirates-cabin-crew-hiring-in-france-august-2026-open-days/",
+    "https://learnwithkateryna.ae/en/blog/emirates-cabin-crew-salary"
+   ],
+   "haul": "long"
+  },
+  "etihad": {
+   "access": "open",
+   "ageRule": "application",
+   "base": "Abu Dhabi",
+   "careersUrl": "https://careers.etihad.com/teams/cabin-crew",
+   "cca": false,
+   "checkedAt": "2026-09-30",
+   "country": "Émirats arabes unis",
+   "english": "B2",
+   "englishNote": "courant",
+   "events": [
+    {
+     "city": "Bruxelles",
+     "date": "2026-11-03",
+     "kind": "Recruitment event"
+    },
+    {
+     "city": "Amsterdam",
+     "date": "2026-11-05",
+     "kind": "Recruitment event"
+    }
+   ],
+   "expMonths": 0,
+   "expRequired": false,
+   "fit": "Plan B idéal pour la qualité de vie : ville plus calme, rythme souvent jugé plus doux.",
+   "iata": "EY",
+   "langs": [],
+   "minAge": 21,
+   "name": "Etihad Airways",
+   "network": "Environ 80 destinations, en croissance",
+   "other": [
+    "Débutants acceptés",
+    "Taille et allonge minimales"
+   ],
+   "payMax": 2600,
+   "payMin": 2200,
+   "payNote": "Environ 9 000 à 10 500 AED/mois selon les heures de vol, sans impôt. Logement et transport fournis.",
+   "perks": [
+    "Non imposé",
+    "Logement fourni",
+    "Transport fourni"
+   ],
+   "recruit": "open",
+   "recruitText": "Événements de recrutement en Europe en novembre 2026, dont Bruxelles et Amsterdam, les plus proches de la France.",
+   "region": "golfe",
+   "sources": [
+    "https://careers.etihad.com/teams/cabin-crew",
+    "https://cabincrew24.com/etihad-cabin-crew-requirements/"
+   ],
+   "haul": "long"
+  },
+  "frenchbee": {
+   "access": "open",
+   "ageRule": "application",
+   "base": "Paris Orly",
+   "careersUrl": "https://www.frenchbee.com",
+   "cca": true,
+   "checkedAt": "2026-09-30",
+   "country": "France",
+   "english": "B2",
+   "englishNote": "TOEIC 800 ou Linguaskill B2, moins de 2 ans",
+   "events": [],
+   "expMonths": 12,
+   "expRequired": true,
+   "fit": "Paie plus basse, mais c'est une première expérience long-courrier utile pour le Golfe.",
+   "iata": "BF",
+   "langs": [],
+   "minAge": 18,
+   "name": "French bee",
+   "network": "Réunion, Tahiti, États-Unis",
+   "other": [
+    "Habiter à moins de 90 min d'Orly",
+    "Recrutement en anglais"
+   ],
+   "payMax": 2200,
+   "payMin": 1800,
+   "payNote": "Estimation : 1 800 à 2 200 € net. CDD au démarrage.",
+   "perks": [
+    "100 % long-courrier",
+    "CDD"
+   ],
+   "recruit": "closed",
+   "recruitText": "Campagne ouverte le 18 juin 2026 (CDD base Orly), probablement close aujourd'hui. Surveille la prochaine.",
+   "region": "france",
+   "sources": [
+    "https://www.skysuccess.fr/french-bee-recrutement-pnc/"
+   ],
+   "haul": "long"
+  },
+  "klm": {
+   "access": "open",
+   "ageRule": "application",
+   "base": "Amsterdam Schiphol",
+   "careersUrl": "https://careers.klm.com",
+   "cca": false,
+   "checkedAt": "2026-09-30",
+   "country": "Pays-Bas",
+   "english": "B2",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "fit": "Hors de portée sans néerlandais.",
+   "iata": "KL",
+   "langs": [
+    "Néerlandais"
+   ],
+   "minAge": 21,
+   "name": "KLM",
+   "network": "Monde entier",
+   "other": [
+    "Taille de 1,58 à 1,90 m",
+    "Habiter près de Schiphol"
+   ],
+   "payMax": 2800,
+   "payMin": 2300,
+   "payNote": "Estimation : 2 300 à 2 800 € net avec les primes.",
+   "perks": [
+    "Groupe Air France-KLM"
+   ],
+   "recruit": "unknown",
+   "recruitText": "Le néerlandais courant est exigé.",
+   "region": "europe",
+   "sources": [
+    "https://www.cabincrewwings.com/blog/klm-cabin-crew-requirements/"
+   ],
+   "haul": "long"
+  },
+  "lacompagnie": {
+   "access": "open",
+   "ageRule": "application",
+   "base": "Paris CDG",
+   "careersUrl": "https://www.lacompagnie.com",
+   "cca": true,
+   "checkedAt": "2026-09-30",
+   "country": "France",
+   "english": "B2",
+   "events": [],
+   "expMonths": 12,
+   "expRequired": false,
+   "fit": "Niche intéressante pour le service premium.",
+   "iata": "B0",
+   "langs": [],
+   "minAge": 18,
+   "name": "La Compagnie",
+   "network": "Paris – New York (Newark), quelques lignes saisonnières",
+   "other": [
+    "Service haut de gamme"
+   ],
+   "payMax": 2600,
+   "payMin": 2000,
+   "payNote": "Estimation : 2 000 à 2 600 € net. Petite équipe, peu de postes.",
+   "perks": [
+    "100 % business",
+    "Contrat français"
+   ],
+   "recruit": "unknown",
+   "recruitText": "Recrutements rares et discrets : candidature spontanée possible.",
+   "region": "france",
+   "sources": [],
+   "haul": "long"
+  },
+  "lufthansa": {
+   "access": "open",
+   "ageRule": "application",
+   "base": "Francfort / Munich",
+   "careersUrl": "https://www.be-lufthansa.com",
+   "cca": false,
+   "checkedAt": "2026-09-30",
+   "country": "Allemagne",
+   "english": "B2",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "fit": "Hors de portée sans allemand.",
+   "iata": "LH",
+   "langs": [
+    "Allemand"
+   ],
+   "minAge": 18,
+   "name": "Lufthansa",
+   "network": "Monde entier",
+   "other": [],
+   "payMax": 2800,
+   "payMin": 2300,
+   "payNote": "Estimation : 2 300 à 2 800 € net avec les primes.",
+   "perks": [
+    "Grand groupe"
+   ],
+   "recruit": "unknown",
+   "recruitText": "L'allemand courant est exigé.",
+   "region": "europe",
+   "sources": [],
+   "haul": "long"
+  },
+  "qatar": {
+   "access": "open",
+   "ageRule": "application",
+   "base": "Doha",
+   "careersUrl": "https://careers.qatarairways.com/global/en/c/cabin-crew-cabin-services-jobs",
+   "cca": false,
+   "checkedAt": "2026-09-30",
+   "country": "Qatar",
+   "english": "B2",
+   "englishNote": "courant à l'écrit et à l'oral",
+   "events": [],
+   "expMonths": 24,
+   "expRequired": false,
+   "fit": "Réseau excellent, mais la discipline est plus stricte : à garder en option derrière Emirates et Etihad.",
+   "iata": "QR",
+   "langs": [],
+   "minAge": 21,
+   "name": "Qatar Airways",
+   "network": "Plus de 170 destinations, très fort sur l'Asie et l'Afrique",
+   "other": [
+    "Allonge de 212 cm",
+    "Règles de vie plus strictes qu'à Dubaï"
+   ],
+   "payMax": 2800,
+   "payMin": 2400,
+   "payNote": "Environ 10 000 à 11 500 QAR/mois selon les heures de vol, sans impôt. Logement meublé, transport et assurance santé fournis.",
+   "perks": [
+    "Non imposé",
+    "Logement fourni",
+    "Transport fourni"
+   ],
+   "recruit": "closed",
+   "recruitText": "La campagne de Paris a fermé le 30 septembre 2026. D’autres campagnes européennes reviennent régulièrement.",
+   "region": "golfe",
+   "sources": [
+    "https://careers.qatarairways.com/global/JobDetail/Cabin-Crew-Recruitment-Paris-France-2026/66193",
+    "https://thecabincrewforum.com/2026/08/16/new-job-alert-qatar-airways-is-hiring-cabin-crew-across-8-global-cities/"
+   ],
+   "haul": "long"
+  },
+  "riyadhair": {
+   "access": "open",
+   "ageRule": "application",
+   "base": "Riyad",
+   "careersUrl": "https://cabincrew-riyadhair.icims.com/jobs",
+   "cca": false,
+   "checkedAt": "2026-09-30",
+   "country": "Arabie saoudite",
+   "english": "B2",
+   "englishNote": "courant",
+   "events": [
+    {
+     "city": "Paris",
+     "date": "2026-10-12",
+     "kind": "Date limite"
+    }
+   ],
+   "expMonths": 12,
+   "expRequired": true,
+   "fit": "Pari sur une compagnie jeune qui grandit vite ; le cadre de vie à Riyad est plus conservateur.",
+   "iata": "RX",
+   "langs": [],
+   "minAge": 21,
+   "name": "Riyadh Air",
+   "network": "Compagnie lancée en 2025, réseau en construction",
+   "other": [
+    "Taille minimale de 160 cm, allonge de 212 cm",
+    "Candidature uniquement en ligne"
+   ],
+   "payMax": 2900,
+   "payMin": 2400,
+   "payNote": "Salaire annoncé comme compétitif et non imposé, avec logement. Pas encore de grille publique fiable : à confirmer en entretien.",
+   "perks": [
+    "Non imposé",
+    "Logement fourni",
+    "Flotte neuve 787"
+   ],
+   "recruit": "open",
+   "recruitText": "Événement de recrutement à Paris : candidatures en ligne jusqu'au 12 octobre 2026. Assessment days aussi à Madrid, Barcelone et Bruxelles.",
+   "region": "golfe",
+   "sources": [
+    "https://www.avianation.com/jobs/cabin-crew-recruitment-event-paris-france-d91aefe6",
+    "https://thecabincrewforum.com/2026/07/03/riyadh-air-cabin-crew-recruitment-2026-the-complete-step-by-step-guide/"
+   ],
+   "haul": "long"
+  },
+  "singapore": {
+   "access": "hard",
+   "accessNote": "Recrute surtout à Singapour et Kuala Lumpur : il faut s'y rendre à tes frais",
+   "ageRule": "application",
+   "base": "Singapour",
+   "careersUrl": "https://careers.singaporeair.com/sia/go/Cabin-Crew/689244/",
+   "cca": false,
+   "checkedAt": "2026-09-30",
+   "country": "Singapour",
+   "english": "B2",
+   "events": [
+    {
+     "city": "Kuala Lumpur",
+     "date": "2026-10-17",
+     "kind": "Walk-in interview"
+    }
+   ],
+   "expMonths": 0,
+   "expRequired": false,
+   "fit": "Très bonne paie, mais c'est difficile d'y entrer depuis la France.",
+   "iata": "SQ",
+   "langs": [],
+   "minAge": 18,
+   "name": "Singapore Airlines",
+   "network": "Asie, Europe, Océanie, États-Unis",
+   "other": [
+    "Taille minimale de 1,65 m pour les hommes"
+   ],
+   "payMax": 3400,
+   "payMin": 2800,
+   "payNote": "Environ 4 000 à 5 000 SGD/mois selon les heures de vol. Coût de la vie élevé à Singapour.",
+   "perks": [
+    "Compagnie 5 étoiles",
+    "Contrat à durée fixe"
+   ],
+   "recruit": "open",
+   "recruitText": "Entretiens à Kuala Lumpur le 17 octobre 2026. Les candidatures étrangères passent par le portail officiel.",
+   "region": "asie",
+   "sources": [
+    "https://heraviationera.com/recruitment/singapore-airlines-cabin-crew-interviews-september-october-2026-bdf37be6"
+   ],
+   "haul": "long"
+  },
+  "swiss": {
+   "access": "open",
+   "ageRule": "application",
+   "base": "Zurich (long-courrier)",
+   "careersUrl": "https://www.swiss.com/corporate/en/careers/professional-fields/cabin-crew-member",
+   "cca": false,
+   "checkedAt": "2026-09-30",
+   "country": "Suisse",
+   "english": "B2",
+   "events": [],
+   "expMonths": 0,
+   "expRequired": false,
+   "fit": "À viser seulement si tu apprends l'allemand ; sinon, la base de Genève en 2027.",
+   "iata": "LX",
+   "langs": [
+    "Allemand"
+   ],
+   "minAge": 18,
+   "name": "SWISS",
+   "network": "Long-courrier depuis Zurich : Amériques, Asie, Afrique",
+   "other": [
+    "Citoyen suisse ou UE",
+    "Taille minimale de 155 cm",
+    "Genève : français + anglais, mais surtout du moyen-courrier"
+   ],
+   "payMax": 3500,
+   "payMin": 3000,
+   "payNote": "Environ 3 700 à 4 200 CHF brut sur 13 mois. Le salaire est élevé, mais la vie à Zurich coûte très cher. La base de Genève (français) fait surtout du moyen-courrier.",
+   "perks": [
+    "13 mois",
+    "Prime de langues"
+   ],
+   "recruit": "closed",
+   "recruitText": "Pas de recrutement PNC en 2026. Les formations reprennent à partir de 2027.",
+   "region": "europe",
+   "sources": [
+    "https://www.swiss.com/corporate/en/careers/professional-fields/cabin-crew-member"
+   ],
+   "haul": "long"
+  },
+  "transavia": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [],
+   "cca": true,
+   "access": "open",
+   "events": [],
+   "checkedAt": "2026-10-01",
+   "name": "Transavia France",
+   "iata": "TO",
+   "haul": "moyen",
+   "region": "france",
+   "country": "France",
+   "base": "Paris Orly (+ Nantes, Lyon)",
+   "payMin": 1800,
+   "payMax": 2300,
+   "payNote": "Estimation : 1 800 à 2 300 € net avec les primes de vol. Contrat français, groupe Air France-KLM.",
+   "perks": [
+    "Groupe Air France-KLM",
+    "Contrat français",
+    "Alternance possible"
+   ],
+   "network": "Europe, Maghreb, Méditerranée",
+   "englishNote": "certificat LILATE ou Linguaskill",
+   "expMonths": 0,
+   "expRequired": false,
+   "other": [
+    "Certificat médical de moins de 2 ans",
+    "Passeport valide 6 mois",
+    "Aussi une alternance sans CCA (formation payée par la compagnie)"
+   ],
+   "recruit": "open",
+   "recruitText": "Sélection PNC ouverte en septembre 2026 pour la base d'Orly (CDD). Transavia propose aussi des alternances, avec ou sans CCA.",
+   "fit": "Ton meilleur tremplin en France : même groupe qu'Air France, et tu es éligible dès maintenant.",
+   "careersUrl": "https://recrutement.transavia.com/fr/annonce/4575049-personnel-navigant-commercial-94390-orly",
+   "sources": [
+    "https://www.pnc-contact.com/2026/09/02/recrutement-pnc-septembre-2026",
+    "https://www.skysuccess.fr/recrutement-pnc-transavia-france/"
+   ]
+  },
+  "easyjet": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "checkedAt": "2026-10-01",
+   "name": "easyJet France",
+   "iata": "U2",
+   "haul": "moyen",
+   "region": "france",
+   "country": "France",
+   "base": "Orly, CDG, Nice, Lyon, Bordeaux, Nantes, Toulouse",
+   "payMin": 1800,
+   "payMax": 2400,
+   "payNote": "Environ 2 000 € brut de fixe, plus une part variable (heures de vol, découchers, commission sur les ventes). Entre 24 et 40 k€ par an selon l'activité et l'ancienneté.",
+   "perks": [
+    "CCA payé par la compagnie",
+    "Contrat français",
+    "Beaucoup de bases"
+   ],
+   "network": "Europe et Maghreb",
+   "englishNote": "C1 conseillé, entretien 100 % en anglais",
+   "expMonths": 6,
+   "expRequired": true,
+   "other": [
+    "Pas de CCA exigé : formation interne payée"
+   ],
+   "recruit": "unknown",
+   "recruitText": "Recrute régulièrement sur ses bases françaises. Pas de campagne datée repérée fin septembre : surveille le site carrières.",
+   "fit": "Beaucoup de bases en France, donc tu peux choisir ta ville.",
+   "careersUrl": "https://careers.easyjet.com",
+   "sources": [
+    "https://www.skysuccess.fr/comment-devenir-pnc-chez-easyjet-en-2026/"
+   ]
+  },
+  "easyjetch": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "checkedAt": "2026-10-01",
+   "name": "easyJet Switzerland",
+   "iata": "DS",
+   "haul": "moyen",
+   "region": "europe",
+   "country": "Suisse",
+   "base": "Genève / Bâle-Mulhouse",
+   "payMin": 2800,
+   "payMax": 3300,
+   "payNote": "Environ 3 300 à 3 900 CHF brut par mois. En vivant côté français (frontalier, près de Genève ou Bâle-Mulhouse), ton pouvoir d'achat est bien meilleur qu'en France.",
+   "perks": [
+    "Salaire suisse",
+    "Français parlé à Genève",
+    "CCA payé"
+   ],
+   "network": "Europe",
+   "englishNote": "entretien en anglais",
+   "expMonths": 6,
+   "expRequired": true,
+   "other": [
+    "Citoyen UE : droit de travailler en Suisse",
+    "Possibilité de vivre en France (frontalier)"
+   ],
+   "recruit": "unknown",
+   "recruitText": "Pas de campagne datée repérée. Recrutement pour Genève et Bâle via le site carrières easyJet.",
+   "fit": "Le meilleur salaire en moyen-courrier en parlant français.",
+   "careersUrl": "https://careers.easyjet.com",
+   "sources": [
+    "https://www.glassdoor.com/Monthly-Pay/easyJet-Cabin-Crew-Geneva-Monthly-Pay-EJI_IE8754.0,7_KO8,18_IL.19,25_IM1141.htm",
+    "https://www.skysuccess.fr/comment-devenir-pnc-chez-easyjet-en-2026/"
+   ]
+  },
+  "swissgeneve": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "checkedAt": "2026-10-01",
+   "name": "SWISS Genève",
+   "iata": "LX",
+   "haul": "moyen",
+   "region": "europe",
+   "country": "Suisse",
+   "base": "Genève",
+   "payMin": 3000,
+   "payMax": 3500,
+   "payNote": "Environ 3 700 à 4 200 CHF brut sur 13 mois. Tu peux vivre côté français comme frontalier.",
+   "perks": [
+    "Salaire suisse",
+    "13 mois",
+    "Groupe Lufthansa"
+   ],
+   "network": "Europe au départ de Genève",
+   "expMonths": 0,
+   "expRequired": false,
+   "other": [
+    "Français + anglais exigés (pas d'allemand à Genève)",
+    "Citoyen suisse ou UE",
+    "Taille minimale de 155 cm"
+   ],
+   "recruit": "closed",
+   "recruitText": "Pas de recrutement PNC en 2026. Les formations reprennent à partir de 2027 : prépare ta candidature.",
+   "fit": "Salaire suisse en français, avec une porte vers le long-courrier de SWISS.",
+   "careersUrl": "https://www.swiss.com/corporate/en/careers/professional-fields/cabin-crew-member",
+   "sources": [
+    "https://www.swiss.com/corporate/en/careers/professional-fields/cabin-crew-member"
+   ]
+  },
+  "luxair": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "checkedAt": "2026-10-01",
+   "name": "Luxair",
+   "iata": "LG",
+   "haul": "moyen",
+   "region": "europe",
+   "country": "Luxembourg",
+   "base": "Luxembourg",
+   "payMin": 2400,
+   "payMax": 2800,
+   "payNote": "Environ 32 à 37 k€ brut de base par an, jusqu'à 36-59 k€ avec les primes. Impôts plus bas qu'en France ; tu peux vivre en Lorraine (frontalier).",
+   "perks": [
+    "Salaire luxembourgeois",
+    "Français courant au Luxembourg"
+   ],
+   "network": "Europe, Méditerranée, vols vacances",
+   "expMonths": 0,
+   "expRequired": false,
+   "other": [
+    "Luxembourgeois de base apprécié",
+    "Français, allemand ou luxembourgeois : un plus"
+   ],
+   "recruit": "open",
+   "recruitText": "Postes de PNC publiés en septembre 2026 (Indeed/Glassdoor Luxembourg). Vérifie sur le site Luxair.",
+   "fit": "Bon salaire en moyen-courrier, et le français suffit souvent.",
+   "careersUrl": "https://www.luxair.lu",
+   "sources": [
+    "https://www.glassdoor.com/Salary/Luxair-Cabin-Crew-Member-Luxembourg-Salaries-EJI_IE13049.0,6_KO7,24_IL.25,35_IM1092.htm",
+    "https://lu.indeed.com/q-luxair-emplois.html"
+   ]
+  },
+  "volotea": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [],
+   "cca": false,
+   "access": "open",
+   "events": [],
+   "checkedAt": "2026-10-01",
+   "name": "Volotea",
+   "iata": "V7",
+   "haul": "moyen",
+   "region": "france",
+   "country": "Espagne / France",
+   "base": "Nantes, Bordeaux, Toulouse, Marseille, Lyon, Strasbourg, Lille…",
+   "payMin": 1500,
+   "payMax": 1900,
+   "payNote": "Estimation : 1 500 à 1 900 € net, souvent en contrat saisonnier. Paie la plus basse de cette liste.",
+   "perks": [
+    "Beaucoup de bases en région",
+    "Avec ou sans CCA"
+   ],
+   "network": "Europe, surtout des villes moyennes",
+   "englishNote": "test en ligne, entretiens en anglais",
+   "expMonths": 0,
+   "expRequired": false,
+   "other": [
+    "Contrats souvent saisonniers"
+   ],
+   "recruit": "unknown",
+   "recruitText": "Recrute régulièrement pour ses bases françaises, surtout avant l'été.",
+   "fit": "À prendre seulement comme première expérience rapide ; la paie est basse.",
+   "careersUrl": "https://www.volotea.com",
+   "sources": [
+    "https://www.skysuccess.fr/compagnies-recrutent-pnc-liste-conseils-2026/"
+   ]
+  },
+  "aircorsica": {
+   "minAge": 18,
+   "ageRule": "application",
+   "english": "B2",
+   "langs": [],
+   "cca": true,
+   "access": "open",
+   "events": [],
+   "checkedAt": "2026-10-01",
+   "name": "Air Corsica",
+   "iata": "XK",
+   "haul": "moyen",
+   "region": "france",
+   "country": "France",
+   "base": "Ajaccio / Bastia",
+   "payMin": 1800,
+   "payMax": 2200,
+   "payNote": "Estimation : 1 800 à 2 200 € net. Contrat français.",
+   "perks": [
+    "Contrat français",
+    "Recrute sur le continent"
+   ],
+   "network": "Corse – continent, quelques lignes européennes",
+   "expMonths": 0,
+   "expRequired": false,
+   "other": [
+    "Sélections souvent à Ajaccio",
+    "Formation d'environ 1 mois"
+   ],
+   "recruit": "unknown",
+   "recruitText": "Pas de campagne 2026 repérée. Candidature spontanée possible : recrutement@aircorsica.com.",
+   "fit": "Option régionale, surtout si la Corse te plaît.",
+   "careersUrl": "https://www.aircorsica.com",
+   "sources": [
+    "https://pnc-coaching.fr/air-corsica-organise-des-selections-pnc/"
+   ]
+  }
+ }
+}

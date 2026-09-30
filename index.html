@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0D141F">
+<title>Centre de contrôle PNC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: airport-ops console. Page header + stat strip, one dark departures board (the bold element), then airline list with filters, then pipeline + profile. */
+:root{
+  --bg:#EDF0F4; --surface:#FFFFFF; --surface-2:#F5F7FA; --ink:#0F1B2D; --muted:#5B6779; --line:#D6DDE6;
+  --sign:#FFC61A; --sign-ink:#1B1500; --accent-text:#8A6400;
+  --board-bg:#0D141F; --board-row:#121C2B; --board-line:#1F2B3D; --board-ink:#FFC61A; --board-text:#E6ECF4; --board-dim:#8B9AB0;
+  --ok:#1D7F47; --ok-bg:#E3F4EA; --warn:#9A6200; --warn-bg:#FCF1DA; --bad:#B3362A; --bad-bg:#FBE6E3;
+  --info:#23609F; --info-bg:#E2EDF9; --idle:#667085; --idle-bg:#ECEEF2;
+  --f-display:"Barlow Condensed","Arial Narrow",sans-serif;
+  --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-data:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0A0F17; --surface:#111925; --surface-2:#0E1520; --ink:#E6ECF4; --muted:#95A2B6; --line:#243043;
+  --sign:#FFC61A; --sign-ink:#1B1500; --accent-text:#FFD04A;
+  --board-bg:#060A10; --board-row:#0D141F; --board-line:#1C2738; --board-ink:#FFC61A; --board-text:#E6ECF4; --board-dim:#8B9AB0;
+  --ok:#52C98C; --ok-bg:#12291E; --warn:#EBB44E; --warn-bg:#2B2210; --bad:#F2796D; --bad-bg:#301815;
+  --info:#74AAF0; --info-bg:#132339; --idle:#8D97A8; --idle-bg:#1A2230;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0A0F17; --surface:#111925; --surface-2:#0E1520; --ink:#E6ECF4; --muted:#95A2B6; --line:#243043;
+  --sign:#FFC61A; --sign-ink:#1B1500; --accent-text:#FFD04A;
+  --board-bg:#060A10; --board-row:#0D141F; --board-line:#1C2738; --board-ink:#FFC61A; --board-text:#E6ECF4; --board-dim:#8B9AB0;
+  --ok:#52C98C; --ok-bg:#12291E; --warn:#EBB44E; --warn-bg:#2B2210; --bad:#F2796D; --bad-bg:#301815;
+  --info:#74AAF0; --info-bg:#132339; --idle:#8D97A8; --idle-bg:#1A2230;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5;padding-inline:16px;padding-block:0 48px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:28px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;letter-spacing:.01em}
+h2{font-size:1.55rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+a{color:var(--info)}
+:focus-visible{outline:2px solid var(--sign);outline-offset:2px;border-radius:4px}
+.eyebrow{font-family:var(--f-display);font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.num{font-family:var(--f-data);font-variant-numeric:tabular-nums}
+
+/* Header */
+header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;padding-top:28px}
+header.top h1{font-size:clamp(2.1rem,5vw,3.1rem);font-weight:700;text-transform:uppercase;line-height:.95;letter-spacing:.02em}
+header.top h1 .tag{display:inline-block;background:var(--sign);color:var(--sign-ink);padding:0 .28em;margin-right:.18em;border-radius:4px}
+.sync{display:grid;gap:2px;text-align:right;font-size:.86rem;color:var(--muted)}
+.sync b{color:var(--ink);font-weight:600}
+.me-chip{display:inline-flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.me-chip span{font-family:var(--f-data);font-size:.76rem;border:1px solid var(--line);background:var(--surface);padding:2px 8px;border-radius:999px}
+
+.banner{background:var(--warn-bg);color:var(--ink);border:1px solid var(--warn);border-radius:var(--r);padding:12px 16px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between}
+.banner b{color:var(--warn)}
+
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;display:grid;gap:2px;min-width:0}
+.stat .v{font-family:var(--f-display);font-size:2.3rem;font-weight:700;line-height:1}
+.stat .l{font-size:.84rem;color:var(--muted)}
+.stat.hot .v{color:var(--accent-text)}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Departures board */
+.board{background:var(--board-bg);color:var(--board-text);border-radius:14px;padding:18px 18px 10px;display:grid;gap:12px}
+.board-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px}
+.board-head h2{color:var(--board-ink)}
+.board-head p{margin:0;color:var(--board-dim);font-size:.86rem}
+.board-scroll{overflow-x:auto}
+.board table{width:100%;border-collapse:collapse;min-width:640px}
+.board th{font-family:var(--f-display);font-weight:600;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--board-dim);text-align:left;padding:6px 10px;border-bottom:1px solid var(--board-line)}
+.board td{padding:10px;border-bottom:1px solid var(--board-line);vertical-align:middle}
+.board tr:last-child td{border-bottom:0}
+.board .d{font-family:var(--f-data);font-size:.86rem;color:var(--board-text);white-space:nowrap}
+.board .j{font-family:var(--f-data);font-weight:600;color:var(--board-ink);white-space:nowrap}
+.board .j.today{background:var(--board-ink);color:var(--board-bg);padding:1px 6px;border-radius:3px}
+.board .co{font-family:var(--f-display);font-size:1.12rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase}
+.board .code{font-family:var(--f-data);color:var(--board-dim);font-size:.78rem;margin-right:8px}
+.board .city{text-transform:uppercase;font-family:var(--f-display);letter-spacing:.06em;font-size:1.02rem}
+.board .kind{color:var(--board-dim);font-size:.86rem}
+.board .empty{color:var(--board-dim);padding:18px 10px}
+.bpill{display:inline-block;font-family:var(--f-display);font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:3px;border:1px solid currentColor;white-space:nowrap}
+.bpill.ok{color:#5BD393}.bpill.warn{color:#F0BC57}.bpill.later{color:#8FB8F2}.bpill.unknown{color:var(--board-dim)}.bpill.no,.bpill.blocked{color:#F2877B}
+
+/* Filters */
+.section-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:10px}
+.section-head p{margin:0;color:var(--muted);font-size:.88rem;max-width:62ch}
+.filters{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:inherit;font-size:.86rem;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);padding:5px 12px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.ctl{display:inline-flex;align-items:center;gap:8px;font-size:.86rem;color:var(--muted)}
+select,input[type=date],input[type=number],textarea{font:inherit;font-size:.9rem;color:var(--ink);background:var(--surface-2);border:1px solid var(--line);border-radius:7px;padding:6px 8px}
+textarea{width:100%;min-height:76px;resize:vertical}
+
+/* Airline list */
+.list{display:grid;gap:10px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.card.mine-active{border-color:var(--accent-text)}
+.row{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(0,1.5fr) minmax(0,1.3fr) auto;gap:14px;align-items:center;padding:14px 16px}
+@media (max-width:900px){.row{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.row .who{grid-column:1/-1}}
+@media (max-width:520px){.row{grid-template-columns:minmax(0,1fr)}}
+.who{display:flex;gap:12px;align-items:center;min-width:0}
+.iata{flex:none;width:46px;height:46px;border-radius:8px;background:var(--board-bg);color:var(--board-ink);display:grid;place-items:center;font-family:var(--f-data);font-weight:600;font-size:.95rem}
+.who h3{font-size:1.3rem;font-weight:700;line-height:1.1}
+.who .sub{font-size:.84rem;color:var(--muted)}
+.haul{display:inline-block;margin-top:3px;font-family:var(--f-display);font-weight:600;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:0 6px;border-radius:3px;border:1px solid var(--line);color:var(--muted)}
+.haul.moyen,.haul.mixte{color:var(--info);border-color:var(--info)}
+.pay{display:grid;gap:5px;min-width:0}
+.pay .amt{font-family:var(--f-data);font-size:.9rem;font-variant-numeric:tabular-nums}
+.pay .amt small{font-family:var(--f-body);color:var(--muted);font-size:.78rem}
+.track{height:6px;border-radius:3px;background:var(--idle-bg);position:relative}
+.track i{position:absolute;top:0;bottom:0;border-radius:3px;background:var(--accent-text)}
+.perks{display:flex;flex-wrap:wrap;gap:4px}
+.perks span{font-size:.72rem;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:0 5px}
+.states{display:grid;gap:6px;justify-items:start;min-width:0}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.pill.ok{color:var(--ok);background:var(--ok-bg)}.pill.warn{color:var(--warn);background:var(--warn-bg)}
+.pill.later,.pill.info{color:var(--info);background:var(--info-bg)}.pill.no,.pill.bad,.pill.blocked{color:var(--bad);background:var(--bad-bg)}
+.pill.unknown,.pill.idle{color:var(--idle);background:var(--idle-bg)}
+.mine{display:grid;gap:4px;justify-items:end}
+.mine label{font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-family:var(--f-display);font-weight:600}
+@media (max-width:900px){.mine{justify-items:start}}
+details.more{border-top:1px solid var(--line)}
+details.more summary{cursor:pointer;list-style:none;padding:8px 16px;font-size:.85rem;color:var(--muted);display:flex;justify-content:space-between;gap:10px}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::after{content:"Détails ▾";font-family:var(--f-display);letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--ink)}
+details.more[open] summary::after{content:"Fermer ▴"}
+.detail{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding:4px 16px 18px;background:var(--surface)}
+@media (max-width:900px){.detail{grid-template-columns:minmax(0,1fr)}}
+.detail h4{margin:0 0 6px;font-family:var(--f-display);font-weight:600;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.detail ul{margin:0;padding-left:18px;display:grid;gap:3px;font-size:.9rem}
+.detail p{margin:0 0 8px;font-size:.9rem;max-width:65ch}
+.detail .fit{border-left:3px solid var(--sign);padding-left:10px}
+.req-ok{color:var(--ok)}.req-no{color:var(--bad)}.req-warn{color:var(--warn)}
+.links{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.86rem}
+.src{font-size:.78rem;color:var(--muted);word-break:break-word}
+.why{font-size:.8rem;color:var(--muted);padding:0 16px 10px;margin-top:-6px}
+.empty-state{background:var(--surface);border:1px dashed var(--line);border-radius:var(--r);padding:28px 20px;text-align:center;color:var(--muted)}
+.empty-state b{color:var(--ink);display:block;font-family:var(--f-display);font-size:1.3rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+
+/* Bottom grid */
+.duo{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:900px){.duo{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:grid;gap:14px;min-width:0}
+.pipe{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+@media (max-width:620px){.pipe{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.step{background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:8px;display:grid;gap:2px;min-width:0}
+.step .v{font-family:var(--f-display);font-size:1.7rem;font-weight:700;line-height:1}
+.step .l{font-size:.74rem;color:var(--muted);line-height:1.2}
+.step.on{border-color:var(--accent-text)}
+.step.on .v{color:var(--accent-text)}
+.mylist{display:grid;gap:6px;margin:0;padding:0;list-style:none}
+.mylist li{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.9rem;padding:6px 0;border-bottom:1px solid var(--line)}
+.mylist li:last-child{border-bottom:0}
+.form{display:grid;gap:12px}
+.field{display:grid;gap:4px}
+.field > span{font-size:.8rem;color:var(--muted)}
+.langs{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:.88rem}
+.langs label{display:inline-flex;gap:5px;align-items:center}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.foot{font-size:.84rem;color:var(--muted);max-width:75ch}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:8px;font-size:.88rem;z-index:10}
+@media (prefers-reduced-motion:no-preference){.card{transition:border-color .2s}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">Steward · Moyen-courrier pour débuter · Long-courrier pour viser · Bonne paye</div>
+      <h1><span class="tag">PNC</span>Centre de contrôle</h1>
+    </div>
+    <div class="sync">
+      <span id="syncLine">Connexion à la base…</span>
+      <div class="me-chip" id="meChip"></div>
+    </div>
+  </header>
+
+  <div class="banner" id="profileBanner" hidden>
+    <span><b>Il manque ta date de naissance.</b> Sans elle, je ne peux pas savoir où tu es éligible (21 ans minimum dans le Golfe).</span>
+    <a href="#profil">Compléter mon profil</a>
+  </div>
+
+  <section class="stats" aria-label="Résumé">
+    <div class="stat hot"><span class="v num" id="sOpen">–</span><span class="l">compagnies qui recrutent</span></div>
+    <div class="stat"><span class="v num" id="sElig">–</span><span class="l">où tu es éligible</span></div>
+    <div class="stat"><span class="v num" id="sApplied">–</span><span class="l">candidatures en cours</span></div>
+    <div class="stat"><span class="v num" id="sNext">–</span><span class="l" id="sNextL">prochain rendez-vous</span></div>
+  </section>
+
+  <section class="board" aria-labelledby="boardTitle">
+    <div class="board-head">
+      <h2 id="boardTitle">Prochains recrutements</h2>
+      <p>Open days, assessment days et dates limites, triés par date</p>
+    </div>
+    <div class="board-scroll">
+      <table>
+        <thead><tr><th>Date</th><th>Dans</th><th>Compagnie</th><th>Lieu</th><th>Type</th><th>Pour toi</th></tr></thead>
+        <tbody id="boardBody"><tr><td colspan="6" class="empty">Chargement des dates…</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section style="display:grid;gap:14px" aria-labelledby="listTitle">
+    <div class="section-head">
+      <h2 id="listTitle">Compagnies</h2>
+      <p>Salaires en € net par mois pour un débutant, estimés. La barre dorée situe la fourchette sur une échelle de 0 à 4 000 €.</p>
+    </div>
+    <div class="filters">
+      <div class="chips" id="haulChips" role="group" aria-label="Type de vols"></div>
+      <div class="chips" id="regionChips" role="group" aria-label="Région"></div>
+      <label class="ctl" for="fStatus">Recrutement
+        <select id="fStatus">
+          <option value="all">Tous</option>
+          <option value="open">Recrute</option>
+          <option value="soon">Bientôt</option>
+          <option value="closed">Fermé</option>
+          <option value="unknown">À vérifier</option>
+        </select>
+      </label>
+      <label class="ctl" for="fSort">Trier par
+        <select id="fSort">
+          <option value="next">Prochaine date</option>
+          <option value="pay">Salaire</option>
+          <option value="fit">Éligibilité</option>
+          <option value="name">Nom</option>
+        </select>
+      </label>
+      <label class="ctl" for="fReach"><input type="checkbox" id="fReach"> Masquer ce qui est hors de portée</label>
+    </div>
+    <div class="list" id="list">
+      <div class="empty-state"><b>Chargement des compagnies</b>Les compagnies long-courrier, leurs salaires et leurs recrutements s'affichent ici.</div>
+    </div>
+  </section>
+
+  <div class="duo">
+    <section class="panel" aria-labelledby="pipeTitle">
+      <h2 id="pipeTitle">Mon suivi</h2>
+      <div class="pipe" id="pipe"></div>
+      <ul class="mylist" id="myList"></ul>
+    </section>
+
+    <section class="panel" id="profil" aria-labelledby="profTitle">
+      <h2 id="profTitle">Mon profil</h2>
+      <form class="form" id="profForm" onsubmit="return false">
+        <div class="two">
+          <label class="field" for="pBirth"><span>Date de naissance</span><input type="date" id="pBirth"></label>
+          <label class="field" for="pExp"><span>Expérience client (mois)</span><input type="number" id="pExp" min="0" max="600" step="1"></label>
+        </div>
+        <div class="two">
+          <label class="field" for="pEng"><span>Niveau d'anglais</span>
+            <select id="pEng"><option>B1</option><option>B2</option><option>C1</option><option>C2</option></select>
+          </label>
+          <label class="field" for="pCca"><span>CCA (certificat PNC)</span>
+            <select id="pCca"><option value="yes">Obtenu</option><option value="no">Pas encore</option></select>
+          </label>
+        </div>
+        <div class="field"><span>Autres langues parlées</span>
+          <div class="langs" id="pLangs"></div>
+        </div>
+        <p class="foot" id="profNote">Ton profil et ton suivi restent sur cet appareil : rien n’est envoyé en ligne. Utilise « Transférer mon suivi » pour les copier sur ton téléphone.</p>
+      </form>
+    </section>
+  </div>
+
+  <section class="panel" id="transfert" aria-labelledby="trTitle">
+    <h2 id="trTitle">Transférer mon suivi</h2>
+    <p class="foot">Pour retrouver ton suivi sur un autre appareil : copie ton code ici, puis colle-le sur l'autre appareil et clique sur « Importer ».</p>
+    <textarea id="trCode" aria-label="Code de transfert" placeholder="Colle ici un code copié depuis ton autre appareil"></textarea>
+    <div class="links">
+      <button type="button" class="chip" id="trCopy">Copier mon code</button>
+      <button type="button" class="chip" id="trImport">Importer ce code</button>
+    </div>
+  </section>
+
+  <p class="foot">Les recrutements sont vérifiés chaque jour par Claude sur les sites des compagnies et la presse spécialisée. Les dates relevées sur des agrégateurs sont à confirmer sur le site officiel avant de te déplacer.</p>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+(function(){
+  const REGIONS = [["all","Toutes"],["golfe","Golfe"],["france","France"],["europe","Europe"],["asie","Asie"],["ameriques","Amériques"]];
+  const HAULS = [["all","Tous les vols"],["moyen","Moyen-courrier"],["long","Long-courrier"]];
+  const HAUL_L = {long:"Long-courrier",moyen:"Moyen-courrier",mixte:"Moyen + long-courrier"};
+  const RECRUIT = {open:["Recrute","ok"],soon:["Bientôt","warn"],closed:["Fermé","idle"],unknown:["À vérifier","unknown"]};
+  const TRACK = [["","Non suivie"],["cible","À viser"],["prepa","En préparation"],["postule","Candidature envoyée"],["selection","Assessment / entretien"],["offre","Offre reçue"],["refus","Refus"]];
+  const TRACK_L = Object.fromEntries(TRACK);
+  const LANGS = ["Allemand","Néerlandais","Espagnol","Italien","Portugais","Arabe","Mandarin","Cantonais","Japonais","Coréen"];
+  const ENG = ["A2","B1","B2","C1","C2"];
+  const RANK = {ok:0,warn:1,unknown:2,later:3,no:4,blocked:5};
+
+  let diag="";
+  let db=null, uid="local", airlines=[], meta=null, mine={}, profile=null, userLoaded=false, airlinesLoaded=false, dbDown=false;
+  const ui = {haul:"all",region:"all",status:"all",sort:"next",reach:false,open:[]};
+  try{ Object.assign(ui, JSON.parse(localStorage.getItem("pnc-ui")||"{}")); }catch(e){}
+  const saveUi=()=>{ try{ localStorage.setItem("pnc-ui", JSON.stringify(ui)); }catch(e){} };
+
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const safeUrl = u => /^https:\/\//.test(u||"") ? u : null;
+  const toastEl = $("toast"); let tt;
+  function toast(msg){ toastEl.textContent=msg; toastEl.hidden=false; clearTimeout(tt); tt=setTimeout(()=>toastEl.hidden=true,2600); }
+
+  // Dates
+  const today = (()=>{ const d=new Date(); d.setHours(0,0,0,0); return d; })();
+  function pd(s){ if(!s) return null; const m=/^(\d{4})-(\d{2})-(\d{2})/.exec(s); return m? new Date(+m[1],+m[2]-1,+m[3]) : null; }
+  const days = d => Math.round((d - today)/864e5);
+  const fmt = d => d.toLocaleDateString("fr-FR",{day:"numeric",month:"short",year:"numeric"});
+  const fmtBoard = d => d.toLocaleDateString("fr-FR",{weekday:"short",day:"2-digit",month:"short"}).toUpperCase();
+  function addYears(d,n){ const x=new Date(d); x.setFullYear(x.getFullYear()+n); return x; }
+  function ageAt(birth, at){ let a=at.getFullYear()-birth.getFullYear(); const m=at.getMonth()-birth.getMonth(); if(m<0||(m===0&&at.getDate()<birth.getDate())) a--; return a; }
+
+  const prof = () => profile || {english:"B2",cca:true,langs:[],exp:0,birth:""};
+
+  function upcoming(a){ return (a.events||[]).map(e=>({...e,d:pd(e.date)})).filter(e=>e.d && e.d>=today).sort((x,y)=>x.d-y.d); }
+
+  // Eligibility for one airline at a reference date
+  function elig(a, ref){
+    const p = prof(); const out = {level:"ok", reasons:[], checks:[]};
+    const bump = (lvl, why) => { if(RANK[lvl]>RANK[out.level]) out.level=lvl; if(why) out.reasons.push(why); };
+    if(a.access==="blocked"){ bump("blocked", a.accessNote||"Hors de portée"); }
+    if(a.access==="permit"){ bump("warn", a.accessNote||"Permis de travail requis"); out.checks.push(["warn", a.accessNote||"Permis de travail requis"]); }
+    if(a.access==="hard"){ bump("warn", a.accessNote||"Recrutement difficile d'accès"); out.checks.push(["warn", a.accessNote]); }
+    // age
+    if(a.minAge){
+      const rule = a.ageRule==="joining" ? "à l'entrée en formation" : "à la candidature";
+      const b = pd(p.birth);
+      if(!b){ bump("unknown","Date de naissance à renseigner"); out.checks.push(["warn",`${a.minAge} ans minimum ${rule} : renseigne ta date de naissance`]); }
+      else{
+        const from = addYears(b, a.minAge);
+        const limit = new Date(ref); if(a.ageRule==="joining") limit.setDate(limit.getDate()+120);
+        if(from <= limit){ out.checks.push(["ok",`${a.minAge} ans minimum ${rule} : OK`]); }
+        else { bump("later",`Possible dès le ${fmt(from)}`); out.checks.push(["no",`${a.minAge} ans minimum ${rule} : tu les auras le ${fmt(from)}`]); out.from=from; }
+      }
+    }
+    // english
+    if(a.english){
+      const ok = ENG.indexOf(p.english) >= ENG.indexOf(a.english);
+      if(!ok){ bump("no",`Anglais ${a.english} requis`); }
+      out.checks.push([ok?"ok":"no",`Anglais ${a.english} minimum${a.englishNote?" ("+a.englishNote+")":""}`]);
+    }
+    // experience
+    if(a.expMonths){
+      const ok = (+p.exp||0) >= a.expMonths;
+      const label = `${a.expMonths} mois d'expérience client ${a.expRequired?"exigés":"conseillés"}`;
+      if(!ok) bump(a.expRequired?"no":"warn", label);
+      out.checks.push([ok?"ok":(a.expRequired?"no":"warn"), label]);
+    }
+    // languages
+    (a.langs||[]).forEach(l=>{
+      const ok = (p.langs||[]).includes(l);
+      if(!ok) bump("no",`${l} requis`);
+      out.checks.push([ok?"ok":"no",`${l} courant exigé`]);
+    });
+    if(a.cca){ const ok=!!p.cca; if(!ok) bump("no","CCA exigé"); out.checks.push([ok?"ok":"no","CCA exigé à la candidature"]); }
+    (a.other||[]).forEach(o=>out.checks.push(["info",o]));
+    return out;
+  }
+  const ELIG_L = {ok:"Éligible",warn:"Éligible, à renforcer",unknown:"Profil à compléter",later:"Pas encore",no:"Pas éligible",blocked:"Hors de portée"};
+  function eligLabel(e){ if(e.level==="later" && e.from) return "Dès le "+e.from.toLocaleDateString("fr-FR",{day:"numeric",month:"short",year:"numeric"}); return ELIG_L[e.level]; }
+  function refDate(a){ const u=upcoming(a); return u.length? u[0].d : today; }
+
+  // Rendering
+  function renderHeader(){
+    const p = prof(); const b=pd(p.birth);
+    const chips=[];
+    if(b) chips.push(`${ageAt(b,today)} ans`);
+    chips.push(p.cca?"CCA ✓":"CCA en cours");
+    chips.push("Anglais "+p.english);
+    if(+p.exp) chips.push(`${p.exp} mois exp. client`);
+    $("meChip").innerHTML = chips.map(c=>`<span>${esc(c)}</span>`).join("");
+    $("profileBanner").hidden = !(userLoaded && uid && !b);
+    if(dbDown){ $("syncLine").textContent="Impossible de charger les compagnies. Vérifie ta connexion puis recharge la page."; return; }
+    const c = meta && pd(meta.checkedAt);
+    $("syncLine").innerHTML = c ? `Recrutements vérifiés le <b>${esc(fmt(c))}</b>` : (airlinesLoaded ? "Recrutements pas encore vérifiés" : "Connexion à la base…");
+  }
+
+  function renderStats(){
+    if(!airlinesLoaded){ return; }
+    const open = airlines.filter(a=>a.recruit==="open").length;
+    const nElig = airlines.filter(a=>{ const l=elig(a,refDate(a)).level; return l==="ok"||l==="warn"; }).length;
+    const active = Object.values(mine).filter(t=>["postule","selection","offre"].includes(t.status)).length;
+    $("sOpen").textContent=open; $("sElig").textContent = (profile&&profile.birth)? nElig : "?";
+    $("sApplied").textContent=active;
+    const ev = allEvents()[0];
+    if(ev){ const n=days(ev.d); $("sNext").textContent = n===0? "Auj." : "J-"+n; $("sNextL").textContent = `${ev.a.name} · ${ev.city}`; }
+    else { $("sNext").textContent="–"; $("sNextL").textContent="prochain rendez-vous"; }
+  }
+
+  function allEvents(){
+    const out=[]; airlines.forEach(a=>upcoming(a).forEach(e=>out.push({...e,a}))); return out.sort((x,y)=>x.d-y.d);
+  }
+
+  function renderBoard(){
+    const body=$("boardBody");
+    if(!airlinesLoaded){ return; }
+    const evs = allEvents().slice(0,14);
+    if(!evs.length){ body.innerHTML=`<tr><td colspan="6" class="empty">Aucune date à venir pour l'instant. Demande à Claude une mise à jour.</td></tr>`; return; }
+    body.innerHTML = evs.map(e=>{
+      const n=days(e.d), el=elig(e.a,e.d);
+      const j = n===0? `<span class="j today">AUJ.</span>` : `<span class="j">J-${n}</span>`;
+      return `<tr>
+        <td class="d">${esc(fmtBoard(e.d))}</td><td>${j}</td>
+        <td><span class="code">${esc(e.a.iata||"")}</span><span class="co">${esc(e.a.name)}</span></td>
+        <td class="city">${esc(e.city||"")}</td>
+        <td class="kind">${esc(e.kind||"")}</td>
+        <td><span class="bpill ${el.level}">${esc(eligLabel(el))}</span></td></tr>`;
+    }).join("");
+  }
+
+  function renderChips(){
+    $("haulChips").innerHTML = HAULS.map(([k,l])=>`<button type="button" class="chip" data-h="${k}" aria-pressed="${ui.haul===k}">${l}</button>`).join("");
+    $("regionChips").innerHTML = REGIONS.map(([k,l])=>`<button type="button" class="chip" data-r="${k}" aria-pressed="${ui.region===k}">${l}</button>`).join("");
+    $("fStatus").value=ui.status; $("fSort").value=ui.sort; $("fReach").checked=!!ui.reach;
+  }
+
+  function cardHtml(a){
+    const e = elig(a, refDate(a)); const t = mine[a.id]||{}; const rec = RECRUIT[a.recruit]||RECRUIT.unknown;
+    const min=+a.payMin||0, max=+a.payMax||min; const S=4000;
+    const left=Math.min(min/S,1)*100, w=Math.max(Math.min(max,S)-Math.min(min,S),40)/S*100;
+    const u = upcoming(a); const next = u[0];
+    const tracked = t.status && t.status!=="refus";
+    const opts = TRACK.map(([k,l])=>`<option value="${k}"${(t.status||"")===k?" selected":""}>${l}</option>`).join("");
+    const canTrack = !!uid;
+    const open = ui.open.includes(a.id);
+    const checks = e.checks.map(([s,txt])=>`<li class="${s==="ok"?"req-ok":s==="no"?"req-no":s==="warn"?"req-warn":""}">${s==="ok"?"✓ ":s==="no"?"✗ ":s==="warn"?"! ":""}${esc(txt)}</li>`).join("");
+    const evs = u.map(x=>`<li><span class="num">${esc(fmt(x.d))}</span> · ${esc(x.city||"")} · ${esc(x.kind||"")}</li>`).join("");
+    const careers = safeUrl(a.careersUrl);
+    const srcs = (a.sources||[]).map(safeUrl).filter(Boolean).map(s=>`<a href="${esc(s)}" target="_blank" rel="noopener">${esc(new URL(s).hostname.replace(/^www\./,""))}</a>`).join(" · ");
+    const checked = pd(a.checkedAt);
+    return `<article class="card${tracked?" mine-active":""}" id="c-${esc(a.id)}">
+      <div class="row">
+        <div class="who"><div class="iata" aria-hidden="true">${esc(a.iata||"")}</div>
+          <div style="min-width:0"><h3>${esc(a.name)}</h3><div class="sub">${esc(a.base||"")} · ${esc(a.country||"")}</div><div class="haul ${esc(a.haul||"long")}">${esc(HAUL_L[a.haul||"long"])}</div></div></div>
+        <div class="pay"><span class="amt">${min.toLocaleString("fr-FR")}–${max.toLocaleString("fr-FR")} € <small>net/mois</small></span>
+          <div class="track" aria-hidden="true"><i style="left:${left}%;width:${w}%"></i></div>
+          <div class="perks">${(a.perks||[]).map(p=>`<span>${esc(p)}</span>`).join("")}</div></div>
+        <div class="states">
+          <span class="pill ${rec[1]}">${rec[0]}${next?` · ${esc(next.d.toLocaleDateString("fr-FR",{day:"numeric",month:"short"}))}`:""}</span>
+          <span class="pill ${e.level}">${esc(eligLabel(e))}</span></div>
+        <div class="mine"><label for="st-${esc(a.id)}">Mon statut</label>
+          <select id="st-${esc(a.id)}" data-track="${esc(a.id)}"${canTrack?"":" disabled"}>${opts}</select></div>
+      </div>
+      ${e.reasons.length && e.level!=="ok" ? `<div class="why">${esc(e.reasons.slice(0,3).join(" · "))}</div>`:""}
+      <details class="more" data-id="${esc(a.id)}"${open?" open":""}>
+        <summary><span>${esc(a.network||"")}</span></summary>
+        <div class="detail">
+          <div><h4>Conditions pour toi</h4><ul>${checks||"<li>Pas de condition particulière relevée</li>"}</ul></div>
+          <div><h4>Recrutement</h4><p>${esc(a.recruitText||"Pas d'information récente.")}</p>
+            ${evs?`<ul>${evs}</ul>`:""}
+            <h4 style="margin-top:12px">Salaire</h4><p>${esc(a.payNote||"")}</p>
+            ${a.fit?`<p class="fit">${esc(a.fit)}</p>`:""}</div>
+          <div><h4>Mes notes</h4>
+            ${canTrack?`<textarea id="nt-${esc(a.id)}" data-notes="${esc(a.id)}" placeholder="Ex. : inscrite à l'open day de Paris, CV envoyé le…">${esc(t.notes||"")}</textarea>
+            <label class="field" for="ap-${esc(a.id)}" style="margin-top:8px"><span>Candidature envoyée le</span><input type="date" id="ap-${esc(a.id)}" data-applied="${esc(a.id)}" value="${esc(t.appliedAt||"")}"></label>`:`<p>Connecte-toi à claude.ai pour suivre tes candidatures.</p>`}
+            <div class="links" style="margin-top:10px">${careers?`<a href="${esc(careers)}" target="_blank" rel="noopener">Site carrières ↗</a>`:""}</div>
+            <p class="src" style="margin-top:6px">${checked?`Vérifié le ${esc(fmt(checked))}`:""}${srcs?` · Sources : ${srcs}`:""}</p>
+          </div>
+        </div>
+      </details>
+    </article>`;
+  }
+
+  function renderList(){
+    const list=$("list");
+    const diagHtml = diag ? `<br><small class="num">Diagnostic : ${esc(diag)}</small>` : "";
+    if(dbDown){ list.innerHTML=`<div class="empty-state"><b>Compagnies indisponibles</b>Vérifie ta connexion internet puis recharge la page.${diagHtml}</div>`; return; }
+    if(!airlinesLoaded) return;
+    if(!airlines.length){ list.innerHTML=`<div class="empty-state"><b>Aucune compagnie pour l'instant</b>Demande à Claude de remplir ton centre de contrôle.${diagHtml}</div>`; return; }
+    let rows = airlines.map(a=>({a, e:elig(a,refDate(a)), n:upcoming(a)[0]}));
+    if(ui.haul!=="all") rows=rows.filter(r=>(r.a.haul||"long")===ui.haul || r.a.haul==="mixte");
+    if(ui.region!=="all") rows=rows.filter(r=>r.a.region===ui.region);
+    if(ui.status!=="all") rows=rows.filter(r=>(r.a.recruit||"unknown")===ui.status);
+    if(ui.reach) rows=rows.filter(r=>!["blocked","no"].includes(r.e.level));
+    const recOrder={open:0,soon:1,unknown:2,closed:3};
+    rows.sort((x,y)=>{
+      if(ui.sort==="pay") return (y.a.payMax||0)-(x.a.payMax||0);
+      if(ui.sort==="name") return x.a.name.localeCompare(y.a.name,"fr");
+      if(ui.sort==="fit") return RANK[x.e.level]-RANK[y.e.level] || (y.a.payMax||0)-(x.a.payMax||0);
+      const dx=x.n?x.n.d:Infinity, dy=y.n?y.n.d:Infinity;
+      return (dx-dy) || (recOrder[x.a.recruit]??2)-(recOrder[y.a.recruit]??2) || (y.a.payMax||0)-(x.a.payMax||0);
+    });
+    if(!rows.length){ list.innerHTML=`<div class="empty-state"><b>Aucune compagnie avec ces filtres</b>Élargis la région ou le statut de recrutement.</div>`; return; }
+    // keep focus/caret in a field if the user is typing
+    const act=document.activeElement; const keep = act && list.contains(act) && act.id ? {id:act.id, v:act.value, s:act.selectionStart, e:act.selectionEnd} : null;
+    list.innerHTML = rows.map(r=>cardHtml(r.a)).join("");
+    if(keep){ const el=$(keep.id); if(el){ el.value=keep.v; el.focus(); try{ el.setSelectionRange(keep.s,keep.e); }catch(_){} } }
+  }
+
+  function renderPipe(){
+    const steps = TRACK.filter(([k])=>k);
+    const counts = {}; Object.values(mine).forEach(t=>{ if(t.status) counts[t.status]=(counts[t.status]||0)+1; });
+    $("pipe").innerHTML = steps.map(([k,l])=>`<div class="step${counts[k]?" on":""}"><span class="v num">${counts[k]||0}</span><span class="l">${l}</span></div>`).join("");
+    const byId = Object.fromEntries(airlines.map(a=>[a.id,a]));
+    const items = Object.values(mine).filter(t=>t.status && byId[t.airline]).sort((x,y)=>TRACK.findIndex(s=>s[0]===y.status)-TRACK.findIndex(s=>s[0]===x.status));
+    if(!uid){ $("myList").innerHTML = `<li>Connecte-toi à claude.ai pour suivre tes candidatures.</li>`; return; }
+    $("myList").innerHTML = items.length ? items.map(t=>{
+      const a=byId[t.airline]; const n=upcoming(a)[0];
+      return `<li><span><b>${esc(a.name)}</b> · ${esc(TRACK_L[t.status])}${t.appliedAt?` · envoyée le ${esc(fmt(pd(t.appliedAt)))}`:""}</span><span class="num" style="color:var(--muted)">${n?esc(`J-${days(n.d)} ${n.city||""}`):""}</span></li>`;
+    }).join("") : `<li style="color:var(--muted)">Choisis « À viser » dans le statut d'une compagnie pour commencer ton suivi.</li>`;
+  }
+
+  function renderProfileForm(force){
+    const p=prof();
+    const set=(id,v)=>{ const el=$(id); if(el && (force || document.activeElement!==el)) el.value=v; };
+    set("pBirth",p.birth||""); set("pExp",p.exp??0); set("pEng",p.english||"B2"); set("pCca",p.cca?"yes":"no");
+    $("pLangs").innerHTML = LANGS.map((l,i)=>`<label for="lg${i}"><input type="checkbox" id="lg${i}" value="${esc(l)}"${(p.langs||[]).includes(l)?" checked":""}> ${esc(l)}</label>`).join("");
+    const dis = !uid; ["pBirth","pExp","pEng","pCca"].forEach(id=>$(id).disabled=dis);
+    $("pLangs").querySelectorAll("input").forEach(i=>i.disabled=dis);
+    if(dis) $("profNote").textContent = "Connecte-toi à claude.ai pour enregistrer ton profil.";
+  }
+
+  function renderAll(){ renderHeader(); renderStats(); renderBoard(); renderList(); renderPipe(); }
+
+  // Writes: one at a time per document
+  const chains={};
+  function write(key, data){
+    try{ localStorage.setItem(key, JSON.stringify(data)); toast("Enregistré sur cet appareil"); }
+    catch(e){ toast("Impossible d'enregistrer : le navigateur bloque le stockage."); }
+  }
+  function readLocal(key){ try{ return JSON.parse(localStorage.getItem(key)||"null"); }catch(e){ return null; } }
+  function saveTrack(id, patch){
+    const cur = mine[id] || {airline:id,status:"",notes:"",appliedAt:""};
+    const next = {...cur, ...patch, airline:id, updatedAt:new Date().toISOString()};
+    mine[id]=next; write("pnc-tracking", mine); renderStats(); renderPipe();
+    const card=$("c-"+id); if(card) card.classList.toggle("mine-active", !!next.status && next.status!=="refus");
+  }
+  function saveProfile(){
+    const p = {
+      birth:$("pBirth").value||"",
+      exp:Math.max(0, parseInt($("pExp").value,10)||0),
+      english:$("pEng").value, cca:$("pCca").value==="yes",
+      langs:[...$("pLangs").querySelectorAll("input:checked")].map(i=>i.value)
+    };
+    profile=p; write("pnc-profile", p); renderAll();
+  }
+
+  // Events
+  $("haulChips").addEventListener("click",e=>{ const b=e.target.closest("[data-h]"); if(!b) return; ui.haul=b.dataset.h; saveUi(); renderChips(); renderList(); });
+  $("regionChips").addEventListener("click",e=>{ const b=e.target.closest("[data-r]"); if(!b) return; ui.region=b.dataset.r; saveUi(); renderChips(); renderList(); });
+  $("fStatus").addEventListener("change",e=>{ ui.status=e.target.value; saveUi(); renderList(); });
+  $("fSort").addEventListener("change",e=>{ ui.sort=e.target.value; saveUi(); renderList(); });
+  $("fReach").addEventListener("change",e=>{ ui.reach=e.target.checked; saveUi(); renderList(); });
+  $("list").addEventListener("change",e=>{
+    const t=e.target;
+    if(t.dataset.track) saveTrack(t.dataset.track,{status:t.value, ...(t.value==="postule" && !(mine[t.dataset.track]||{}).appliedAt ? {appliedAt:new Date().toISOString().slice(0,10)} : {})});
+    else if(t.dataset.notes) saveTrack(t.dataset.notes,{notes:t.value.slice(0,4000)});
+    else if(t.dataset.applied) saveTrack(t.dataset.applied,{appliedAt:t.value});
+  });
+  $("list").addEventListener("toggle",e=>{
+    const d=e.target; if(!d.matches || !d.matches("details.more")) return;
+    const id=d.dataset.id; ui.open = ui.open.filter(x=>x!==id); if(d.open) ui.open.push(id); saveUi();
+  }, true);
+  $("profForm").addEventListener("change",()=>{ if(uid) saveProfile(); });
+
+  $("trCopy").addEventListener("click",()=>{
+    const code = btoa(unescape(encodeURIComponent(JSON.stringify({p:profile, t:mine}))));
+    $("trCode").value = code;
+    const done=()=>toast("Code copié : colle-le sur ton autre appareil");
+    if(navigator.clipboard) navigator.clipboard.writeText(code).then(done,()=>{ $("trCode").select(); toast("Sélectionne le code et copie-le"); });
+    else { $("trCode").select(); toast("Sélectionne le code et copie-le"); }
+  });
+  $("trImport").addEventListener("click",()=>{
+    try{
+      const d = JSON.parse(decodeURIComponent(escape(atob($("trCode").value.trim()))));
+      if(d.p){ profile=d.p; write("pnc-profile", profile); }
+      if(d.t){ mine=d.t; write("pnc-tracking", mine); }
+      renderProfileForm(true); renderAll(); toast("Suivi importé");
+    }catch(e){ toast("Code invalide : recopie-le en entier."); }
+  });
+  renderChips(); renderProfileForm(true); renderHeader();
+
+  // Data
+  async function loadCatalog(){
+    try{
+      const r = await fetch("data.json?t="+Date.now(), {cache:"no-store"});
+      if(!r.ok) throw new Error("HTTP "+r.status);
+      const c = await r.json();
+      const map = c.airlines || {};
+      airlines = Object.keys(map).map(id=>({id, ...map[id]})).filter(a=>a && a.name);
+      meta = {checkedAt:c.checkedAt, summary:c.summary}; dbDown=false; diag="";
+    }catch(e){ if(!airlines.length){ dbDown=true; diag=String(e.message||e); } }
+    airlinesLoaded=true; renderAll();
+  }
+  (function start(){
+    profile = readLocal("pnc-profile"); mine = readLocal("pnc-tracking") || {}; userLoaded=true;
+    renderProfileForm(true); renderAll();
+    loadCatalog();
+    setInterval(loadCatalog, 15*60*1000);
+    document.addEventListener("visibilitychange",()=>{ if(!document.hidden) loadCatalog(); });
+    setInterval(()=>{ const d=new Date(); d.setHours(0,0,0,0); if(d.getTime()!==today.getTime()){ today.setTime(d.getTime()); renderAll(); } }, 60000);
+  })();
+})();
+</script>
+</body>
+</html>
