@@ -1,6 +1,6 @@
 {
- "checkedAt": "2026-10-01",
- "summary": "Ajout de 29 compagnies (Ryanair, Wizz Air, Emerald, Norwegian, flydubai…) et du filtre « Travail en anglais ».",
+ "checkedAt": "2026-10-02",
+ "summary": "Qatar Airways ouvre une campagne à Nice (jusqu'au 10 octobre) ; easyJet suspend ses recrutements le temps de finaliser l'été 2027 ; Etihad ajoute Bratislava le 17 novembre.",
  "airlines": {
   "aerlingus": {
    "access": "open",
@@ -85,7 +85,7 @@
    "base": "Paris Orly",
    "careersUrl": "https://www.aircaraibes.com",
    "cca": true,
-   "checkedAt": "2026-09-30",
+   "checkedAt": "2026-10-02",
    "country": "France",
    "english": "B2",
    "events": [],
@@ -122,7 +122,7 @@
    "base": "Paris CDG / Orly",
    "careersUrl": "https://recrutement.airfrance.com",
    "cca": true,
-   "checkedAt": "2026-09-30",
+   "checkedAt": "2026-10-02",
    "country": "France",
    "english": "B2",
    "englishNote": "certifié",
@@ -307,7 +307,7 @@
    "base": "Paris Orly + outre-mer",
    "careersUrl": "https://www.flycorsair.com",
    "cca": true,
-   "checkedAt": "2026-09-30",
+   "checkedAt": "2026-10-02",
    "country": "France",
    "english": "B2",
    "englishNote": "certificat Linguaskill ou LILATE",
@@ -379,7 +379,7 @@
    "base": "Dubaï",
    "careersUrl": "https://www.emiratesgroupcareers.com/cabin-crew/",
    "cca": false,
-   "checkedAt": "2026-09-30",
+   "checkedAt": "2026-10-02",
    "country": "Émirats arabes unis",
    "english": "B2",
    "englishNote": "anglais courant",
@@ -464,7 +464,7 @@
    "base": "Abu Dhabi",
    "careersUrl": "https://careers.etihad.com/teams/cabin-crew",
    "cca": false,
-   "checkedAt": "2026-09-30",
+   "checkedAt": "2026-10-02",
    "country": "Émirats arabes unis",
    "english": "B2",
    "englishNote": "courant",
@@ -477,6 +477,11 @@
     {
      "city": "Amsterdam",
      "date": "2026-11-05",
+     "kind": "Recruitment event"
+    },
+    {
+     "date": "2026-11-17",
+     "city": "Bratislava",
      "kind": "Recruitment event"
     }
    ],
@@ -501,11 +506,12 @@
     "Transport fourni"
    ],
    "recruit": "open",
-   "recruitText": "Événements de recrutement en Europe en novembre 2026, dont Bruxelles et Amsterdam, les plus proches de la France.",
+   "recruitText": "Événements de recrutement en Europe en novembre 2026 : Bruxelles (3/11) et Amsterdam (5/11), les plus proches de la France, puis Bratislava (17/11). Inscription préalable obligatoire. Etihad exige 21 ans : tu ne seras éligible qu'à partir de juin 2027.",
    "region": "golfe",
    "sources": [
     "https://careers.etihad.com/teams/cabin-crew",
-    "https://cabincrew24.com/etihad-cabin-crew-requirements/"
+    "https://cabincrew24.com/etihad-cabin-crew-requirements/",
+    "https://www.cabincrewhub.net/2026/09/etihad-airways-cabin-crew-recruitment-event-bratislava.html"
    ],
    "haul": "long",
    "englishEnv": true
@@ -516,7 +522,7 @@
    "base": "Paris Orly",
    "careersUrl": "https://www.frenchbee.com",
    "cca": true,
-   "checkedAt": "2026-09-30",
+   "checkedAt": "2026-10-02",
    "country": "France",
    "english": "B2",
    "englishNote": "TOEIC 800 ou Linguaskill B2, moins de 2 ans",
@@ -659,11 +665,17 @@
    "base": "Doha",
    "careersUrl": "https://careers.qatarairways.com/global/en/c/cabin-crew-cabin-services-jobs",
    "cca": false,
-   "checkedAt": "2026-09-30",
+   "checkedAt": "2026-10-02",
    "country": "Qatar",
    "english": "B2",
    "englishNote": "courant à l'écrit et à l'oral",
-   "events": [],
+   "events": [
+    {
+     "date": "2026-10-10",
+     "city": "Nice",
+     "kind": "Date limite"
+    }
+   ],
    "expMonths": 24,
    "expRequired": false,
    "fit": "Réseau excellent, mais la discipline est plus stricte : à garder en option derrière Emirates et Etihad.",
@@ -684,12 +696,12 @@
     "Logement fourni",
     "Transport fourni"
    ],
-   "recruit": "closed",
-   "recruitText": "La campagne de Paris a fermé le 30 septembre 2026. D’autres campagnes européennes reviennent régulièrement.",
+   "recruit": "open",
+   "recruitText": "Campagne à Nice ouverte, candidatures en ligne jusqu'au 10 octobre 2026 (date relevée sur un agrégateur, à confirmer sur le site officiel). Paris a fermé le 30 septembre. Qatar exige 21 ans à la candidature : tu ne seras éligible qu'à partir du 6 juin 2027.",
    "region": "golfe",
    "sources": [
-    "https://careers.qatarairways.com/global/JobDetail/Cabin-Crew-Recruitment-Paris-France-2026/66193",
-    "https://thecabincrewforum.com/2026/08/16/new-job-alert-qatar-airways-is-hiring-cabin-crew-across-8-global-cities/"
+    "https://careers.qatarairways.com/global/JobDetail/Cabin-Crew-Recruitment-Nice-France-2026/66211",
+    "https://flightattendantcentral.com/pages/qatar-airways"
    ],
    "haul": "long",
    "englishEnv": true
@@ -700,7 +712,7 @@
    "base": "Riyad",
    "careersUrl": "https://cabincrew-riyadhair.icims.com/jobs",
    "cca": false,
-   "checkedAt": "2026-09-30",
+   "checkedAt": "2026-10-02",
    "country": "Arabie saoudite",
    "english": "B2",
    "englishNote": "courant",
@@ -833,7 +845,7 @@
    "cca": true,
    "access": "open",
    "events": [],
-   "checkedAt": "2026-10-01",
+   "checkedAt": "2026-10-02",
    "name": "Transavia France",
    "iata": "TO",
    "haul": "moyen",
@@ -874,7 +886,7 @@
    "cca": false,
    "access": "open",
    "events": [],
-   "checkedAt": "2026-10-01",
+   "checkedAt": "2026-10-02",
    "name": "easyJet France",
    "iata": "U2",
    "haul": "moyen",
@@ -896,11 +908,12 @@
    "other": [
     "Pas de CCA exigé : formation interne payée"
    ],
-   "recruit": "unknown",
-   "recruitText": "Recrute régulièrement sur ses bases françaises. Pas de campagne datée repérée fin septembre : surveille le site carrières.",
+   "recruit": "soon",
+   "recruitText": "Pas de recrutement en ce moment : easyJet finalise ses besoins PNC pour l'été 2027. Inscris-toi sur le site carrières pour recevoir une alerte dès l'ouverture de ta base (Orly, CDG, Nice, Lyon, Bordeaux…).",
    "fit": "Beaucoup de bases en France, donc tu peux choisir ta ville.",
    "careersUrl": "https://careers.easyjet.com",
    "sources": [
+    "https://careers.easyjet.com/en/career-areas/cabin-crew",
     "https://www.skysuccess.fr/comment-devenir-pnc-chez-easyjet-en-2026/"
    ]
   },
@@ -912,7 +925,7 @@
    "cca": false,
    "access": "open",
    "events": [],
-   "checkedAt": "2026-10-01",
+   "checkedAt": "2026-10-02",
    "name": "easyJet Switzerland",
    "iata": "DS",
    "haul": "moyen",
@@ -935,11 +948,12 @@
     "Citoyen UE : droit de travailler en Suisse",
     "Possibilité de vivre en France (frontalier)"
    ],
-   "recruit": "unknown",
-   "recruitText": "Pas de campagne datée repérée. Recrutement pour Genève et Bâle via le site carrières easyJet.",
+   "recruit": "soon",
+   "recruitText": "Pas de recrutement en ce moment : easyJet finalise ses besoins PNC pour l'été 2027. Pour Genève ou Bâle, inscris-toi sur le site carrières (contact : SwissCrewrecruitment@easyJet.com).",
    "fit": "Le meilleur salaire en moyen-courrier en parlant français.",
    "careersUrl": "https://careers.easyjet.com",
    "sources": [
+    "https://careers.easyjet.com/en/career-areas/cabin-crew",
     "https://www.glassdoor.com/Monthly-Pay/easyJet-Cabin-Crew-Geneva-Monthly-Pay-EJI_IE8754.0,7_KO8,18_IL.19,25_IM1141.htm",
     "https://www.skysuccess.fr/comment-devenir-pnc-chez-easyjet-en-2026/"
    ]
@@ -991,7 +1005,7 @@
    "cca": false,
    "access": "open",
    "events": [],
-   "checkedAt": "2026-10-01",
+   "checkedAt": "2026-10-02",
    "name": "Luxair",
    "iata": "LG",
    "haul": "moyen",
@@ -1029,7 +1043,7 @@
    "cca": false,
    "access": "open",
    "events": [],
-   "checkedAt": "2026-10-01",
+   "checkedAt": "2026-10-02",
    "name": "Volotea",
    "iata": "V7",
    "haul": "moyen",
@@ -1228,7 +1242,7 @@
    "events": [],
    "expMonths": 6,
    "expRequired": true,
-   "checkedAt": "2026-10-01",
+   "checkedAt": "2026-10-02",
    "englishEnv": true,
    "other": [
     "Entretien en anglais"
@@ -1248,11 +1262,12 @@
    "payNote": "À Amsterdam, environ 2 000 à 3 000 € par mois d'après les salaires déclarés. Le montant varie selon la base.",
    "network": "Europe",
    "englishNote": "C1 conseillé",
-   "recruit": "unknown",
-   "recruitText": "Recrute régulièrement pour ses bases européennes. Surveille le site carrières.",
+   "recruit": "soon",
+   "recruitText": "Pas de recrutement en ce moment : easyJet finalise ses besoins PNC pour l'été 2027. Surveille le site carrières.",
    "fit": "Amsterdam ou Berlin : tu travailles en anglais avec un bon salaire pour du moyen-courrier.",
    "careersUrl": "https://careers.easyjet.com",
    "sources": [
+    "https://careers.easyjet.com/en/career-areas/cabin-crew",
     "https://www.glassdoor.com/Salary/easyJet-Cabin-Crew-Amsterdam-Salaries-EJI_IE8754.0,7_KO8,18_IL.19,28_IM1112.htm"
    ]
   },
